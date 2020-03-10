@@ -1,4 +1,4 @@
-queryWooliesURL = "";
+let queryWooliesURL = "";
 
 $.ajax({
   url: queryWooliesURL,
