@@ -5690,8 +5690,8 @@ input[type=tel]:not(.browser-default):focus:not([readonly]),
 input[type=number]:not(.browser-default):focus:not([readonly]),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #e91e63;
-  box-shadow: 0 1px 0 0 #e91e63;
+  border-bottom: 1px solid #3f51b5;
+  box-shadow: 0 1px 0 0 #3f51b5;
 }
 input:not([type]):focus:not([readonly]) + label,
 input[type=text]:not(.browser-default):focus:not([readonly]) + label,
@@ -5706,7 +5706,7 @@ input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
 input[type=number]:not(.browser-default):focus:not([readonly]) + label,
 input[type=search]:not(.browser-default):focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #e91e63;
+  color: #3f51b5;
 }
 input:not([type]):focus.valid ~ label,
 input[type=text]:not(.browser-default):focus.valid ~ label,
@@ -5986,7 +5986,7 @@ textarea.materialize-textarea + label:after {
   top: 0.5rem;
 }
 .input-field .prefix.active {
-  color: #e91e63;
+  color: #3f51b5;
 }
 .input-field .prefix ~ input,
 .input-field .prefix ~ textarea,
@@ -6502,7 +6502,7 @@ select {
   z-index: 1;
 }
 .select-wrapper input.select-dropdown:focus {
-  border-bottom: 1px solid #e91e63;
+  border-bottom: 1px solid #3f51b5;
 }
 .select-wrapper .caret {
   position: absolute;
@@ -7607,12 +7607,12 @@ input[type=range]::-ms-thumb {
   height: 8px;
   width: 8px;
   margin: 24px 4px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #3f51b5;
   transition: background-color 0.3s;
   border-radius: 50%;
 }
 .carousel .indicators .indicator-item.active {
-  background-color: #fff;
+  background-color: #e91e63;
 }
 .carousel.scrolling .carousel-item .materialboxed,
 .carousel .carousel-item:not(.active) .materialboxed {

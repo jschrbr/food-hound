@@ -1,0 +1,50 @@
+header,
+main,
+footer,
+.nav,
+main {
+  padding-left: 300px;
+}
+
+main {
+  margin: 5%;
+}
+@media only screen and (max-width: 992px) {
+  header,
+  main,
+  footer,
+  .nav,
+  main {
+    padding-left: 0;
+  }
+  main {
+    margin: 0px;
+  }
+  .results {
+    margin-bottom: 5%;
+  }
+}
+
+.flex-div {
+  display: flex;
+  justify-content: center;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.float-right {
+  float: right;
+}
+
+.results {
+  margin-top: 60px;
+}
+
+/* .background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+} */
