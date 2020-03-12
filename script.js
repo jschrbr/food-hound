@@ -21,15 +21,15 @@ function buildQuery(){
 
         for (index in results){
             var text_content = "Title: " + results[index].title;
-            // var image_content = "image: " + results[index].image;
             var text = document.createTextNode(text_content);
             var tag_element = $("<div>");
             tag_element.append(text);
             var body = $("body")
-
-            // var image_element = document.createElement("img")
-            // image_element.append(image)
-            body.append(tag_element)
+            console.log(index)
+            
+            var image_element = $("<img>").attr("src","https://spoonacular.com/recipeImages/"+results[index].imageUrls);
+            // console.log(results[index].imageUrls);
+            body.append(image_element);
         }        
     });
 }
