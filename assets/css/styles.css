@@ -7,16 +7,19 @@ nav .brand-logo {
   color: #444;
 }
 
-.returned-recipes img {
-  background-color: grey;
-  width: 100%;
-  height: 150px;
+#returned-recipes img {
+  margin: 10px;
 }
+
+#background {
+  width: 100%;
+}
+
 p {
   line-height: 2rem;
 }
 
-.parallax-container {
+/* .parallax-container {
   min-height: 1000px;
   line-height: 0;
   height: auto;
@@ -24,7 +27,7 @@ p {
 }
 .parallax-container .section {
   width: 100%;
-}
+} */
 
 @media only screen and (max-width: 600px) {
   #index-banner .section {
