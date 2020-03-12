@@ -1,0 +1,36 @@
+.input-field {
+  background-color: white;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+#returned-recipes img {
+  margin: 10px;
+}
+
+#background {
+  width: 100%;
+}
+
+p {
+  line-height: 2rem;
+}
+
+/* .parallax-container {
+  min-height: 1000px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+.parallax-container .section {
+  width: 100%;
+} */
+
+@media only screen and (max-width: 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
