@@ -4,6 +4,16 @@ body {
   background-size: cover;
 }
 
+.flex-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
 .input-field {
   background-color: white;
 }
@@ -11,5 +21,10 @@ body {
 .flex-div {
   display: "flex";
   justify-content: center;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
   align-items: center;
 }
