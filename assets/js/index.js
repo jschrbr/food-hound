@@ -9,17 +9,14 @@ function getIngredients(id, rate) {
     "https://api.spoonacular.com/recipes/" +
     id +
     "/priceBreakdownWidget.json?apiKey=a6e7c38ff34b4abfaef92a07685d0635";
-  console.log(rate);
   $.ajax({
     url: queryURL,
     method: "GET"
   })
     .then(function(resp) {
-      console.log(resp.ingredients);
       res = resp.ingredients;
       $("tbody").text("");
       res.forEach(ingrd => {
-        console.log(ingrd.name);
         let tr = createEl("tr");
         let tdName = createEl("td").text(ingrd.name);
         let tdQty = createEl("td").text(
@@ -37,7 +34,7 @@ function getIngredients(id, rate) {
     });
 }
 
-function getConversionRate() {
+function getConversionRate(id) {
   url =
     "https://free.currconv.com/api/v7/convert?q=USD_AUD&compact=ultra&apiKey=07b4e474a20765fec5ef";
   $.ajax({
@@ -45,8 +42,12 @@ function getConversionRate() {
     method: "GET"
   }).then(function(resp) {
     let rate = resp[Object.keys(resp)];
-    getIngredients(res[0].id, rate);
+    getIngredients(id, rate);
   });
+}
+
+function cardBtn() {
+  getConversionRate($(this)[0].id);
 }
 
 function getRecipes(query) {
@@ -58,34 +59,46 @@ function getRecipes(query) {
     method: "GET"
   })
     .then(function(resp) {
-      res = resp.results;
-      carouselSel.text("");
-      for (var i = 0; i < res.length; i++) {
-        // let panelEl = createEl("div").addClass(["carousel-item"]);
+      if (resp.results.length > 0) {
+        res = resp.results;
+        carouselSel.text("");
+        for (var i = 0; i < res.length; i++) {
+          let card = createEl("div").addClass([
+            "card",
+            "small",
+            "carousel-item"
+          ]);
+          let cardImage = createEl("div").addClass(["card-image"]);
+          let cardTitle = createEl("span")
+            .addClass(["card-title"])
+            .text(res[i].title);
+          let cardContent = createEl("div").addClass(["card-content"]);
+          let img = $("<img>").attr({
+            src: "https://spoonacular.com/recipeImages/" + res[i].imageUrls[0]
+          });
+          let buttonWrapper = createEl("a")
+            .attr({ href: "javascript:", id: res[i].id })
+            .append(img)
+            .addClass("card-btn");
 
-        let card = createEl("div").addClass(["card", "small", "carousel-item"]);
-        let cardImage = createEl("div").addClass(["card-image"]);
-        let cardTitle = createEl("span")
-          .addClass(["card-title"])
-          .text(res[i].title);
-        let cardContent = createEl("div").addClass(["card-content"]);
-        let img = $("<img>").attr({
-          src: "https://spoonacular.com/recipeImages/" + res[i].imageUrls[0]
+          let para = createEl("p");
+
+          cardImage.append(buttonWrapper);
+          cardContent.append(cardTitle, para);
+          card.append(cardImage, cardContent);
+          carouselSel.append(card);
+        }
+        $(".fixed-action-btn").floatingActionButton({
+          toolbarEnabled: true
         });
+        $(".carousel").carousel({
+          fullWidth: true,
+          indicators: true
+        });
+        $(".card-btn").click(cardBtn);
 
-        let para = createEl("p").text("Hello");
-
-        cardImage.append(img);
-        cardContent.append(cardTitle, para);
-        card.append(cardImage, cardContent);
-        carouselSel.append(card);
+        getConversionRate(res[0].id);
       }
-
-      $(".carousel").carousel({
-        fullWidth: true,
-        indicators: true
-      });
-      getConversionRate();
     })
     .fail(function(resp) {
       console.log(resp);
@@ -102,7 +115,14 @@ function newQuery(e) {
   e.preventDefault();
 
   let query = $("input").val();
+
   if (query !== "") {
+    $("input").val("");
+    $("input")
+      .next()
+      .removeClass("active")
+      .removeClass("valid");
+    $(".sidenav").sidenav("close");
     getRecipes(query);
   }
 }
