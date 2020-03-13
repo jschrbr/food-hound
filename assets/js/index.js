@@ -122,7 +122,9 @@ function newQuery(e) {
       .next()
       .removeClass("active")
       .removeClass("valid");
-    $(".sidenav").sidenav("close");
+    if ($(window).width() < 992) {
+      $(".sidenav").sidenav("close");
+    }
     getRecipes(query);
   }
 }
