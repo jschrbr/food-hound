@@ -18,6 +18,10 @@
     rel="stylesheet"
   />
   <link
+    href="https://fonts.googleapis.com/css?family=Bellota&display=swap"
+    rel="stylesheet"
+  >
+  <link
     href="assets/css/materialize.css"
     type="text/css"
     rel="stylesheet"
@@ -31,9 +35,9 @@
   />
 </head>
 
-<body>
+<body class="bellota">
   <nav
-    class="white"
+    class="amber"
     role="navigation"
   >
     <div class="nav-wrapper">
@@ -43,76 +47,92 @@
         src="./assets/images/food-hound-logo.png"
         width=80
         height="50"
+        id="logo"
       >
       <span class="fill-space"></span>
       <a
         id="logo-container"
         class="brand-logo black-text center"
-      >Food Hound</a>
+      >food hound</a>
       <span class="fill-space"></span>
 
     </div>
   </nav>
 
 
-  <div class="container">
-    <div class="card">
-      <div class="flex-div">
-        <h5 class="center">
-          Search for recipes
-        </h5>
-      </div>
-      <div class="flex-div">
-        <form width="400px">
-          <div class="input-field">
-            <input
-              type="text"
-              id="search"
-            />
-            <label for="search">Enter a dish name</label>
-          </div>
-        </form>
+  <main>
+    <div class="container">
+      <div class="card amber">
+        <div class="flex-div">
+          <h5 class="center">
+            Search for recipes
+          </h5>
+        </div>
+        <div class="flex-div">
+          <form width="400px">
+            <div class="input-field amber">
+              <input
+                type="text"
+                id="search"
+                class="red-text"
+              />
+              <label for="search">Enter a dish name</label>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="container">
-    <div
-      class="row flex-wrap"
-      id="recipes"
-    >
-    </div>
-  </div>
-
-  <div class="container">
-    <div
-      class="card center-align"
-      id="ingredientsCard"
-    >
-      <h5
-        class="center"
-        id="ingredientsTitle"
+    <div class="container">
+      <div
+        class="card center-align amber"
+        id="ingredientsCard"
       >
-        Browse the ingredients
-      </h5>
-      <table class="center-align responsive-table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Qty.</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
+        <h5
+          class="center"
+          id="ingredientsTitle"
+        >
+          Browse the ingredients
+        </h5>
+        <table class="center-align responsive-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty.</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
 
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
+    <div class="container">
+      <div
+        class="row flex-wrap"
+        id="recipes"
+      >
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer amber">
+    <h5 class="black-text">Food Hound</h5>
+
+    <div class="footer-copyright">
+      <div class="container">
+        <a
+          class="black-text right"
+          href="https://github.com/jschrbr/food-hound/"
+        >github</a>
+      </div>
+    </div>
+  </footer>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/materialize.js"></script>
   <script src="assets/js/init.js"></script>
 </body>
+
 
 </html>

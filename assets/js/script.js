@@ -66,7 +66,7 @@ function renderCards(response) {
     let recipeID = result.id;
     let imgUrl = `https://spoonacular.com/recipeImages/${result.image}`;
     let col = createEl("div").addClass("col s12 m5 l3");
-    let card = createEl("div").addClass("card small");
+    let card = createEl("div").addClass("card small amber");
     let buttonWrapper = createEl("a")
       .attr({
         href: "javascript:;",
@@ -78,11 +78,12 @@ function renderCards(response) {
     let cardImg = createEl("div")
       .addClass("card-image")
       .append(buttonWrapper);
-    let cardContent = createEl("div").addClass("card-content");
+    let cardContent = createEl("div").addClass("card-content amber");
     var cardTitle = createEl("span")
       .text(result.title)
       .addClass("card-title");
-    card.append(cardImg, cardTitle, cardContent);
+    cardContent.append(cardTitle);
+    card.append(cardImg, cardContent);
     col.append(card);
     recipeCards.append(col);
   });

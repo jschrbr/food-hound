@@ -1,5 +1,26 @@
 body {
-  background-color: tomato;
+  background-color: #f44336;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.bellota {
+  font-family: "Bellota", cursive;
+}
+
+#logo {
+  margin: 15px 0px 0px 15px;
+}
+
+@media screen and (max-width: 600px) {
+  #logo {
+    margin: 7px 0px 0px 7px;
+  }
 }
 
 .flex-div {
@@ -10,6 +31,10 @@ body {
 
 .fill-space {
   flex: 1 1 auto;
+}
+
+.container {
+  /* width: 100%; */
 }
 
 .input-field {
