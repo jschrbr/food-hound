@@ -1,88 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Food Hound</title>
 
-<head>
-  <meta
-    http-equiv="Content-Type"
-    content="text/html; charset=UTF-8"
-  />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  />
-  <title>Food Hound</title>
+    <!-- CSS  -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/css/materialize.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="assets/css/styles.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+  </head>
 
-  <!-- CSS  -->
-  <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-  />
-  <link
-    href="assets/css/materialize.css"
-    type="text/css"
-    rel="stylesheet"
-    media="screen,projection"
-  />
-  <link
-    href="assets/css/styles.css"
-    type="text/css"
-    rel="stylesheet"
-    media="screen,projection"
-  />
-</head>
-
-<body>
-  <nav
-    class="white"
-    role="navigation"
-  >
-    <div class="nav-wrapper container">
-      <a
-        id="logo-container"
-        src="../assets/images/food-hound-logo.png"
-        class="brand-logo"
-      >Food Hound</a>
-      <a
-        href="#"
-        data-target="nav-mobile"
-        class="sidenav-trigger"
-      ><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-
-  <div id="index-banner" class="container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">
-            Search a recipe and find out where to get the ingredients
-          </h5>
-        </div>
-        <div class="row center">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s12">
-                <input
-                  id="recipe-search-field"
-                  type="text"
-                />
-                <label for="text">Search for a recipe</label>
-              </div>
-            </div>
-          </form>
-        </div>
-        <br /><br />
+  <body>
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a
+          id="logo-container"
+          src="../assets/images/food-hound-logo.png"
+          class="brand-logo"
+          >Food Hound</a
+        >
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
       </div>
-      <div>
+    </nav>
+
+    <div id="index-banner" class="container">
+      <div class="section no-pad-bot">
         <div class="container">
+          <div class="row center">
+            <h5 class="header col s12 light">
+              Search a recipe and find out where to get the ingredients
+            </h5>
+          </div>
+          <div class="row center">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="recipe-search-field" type="text" />
+                  <label for="text">Search for a recipe</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <br /><br />
+        </div>
+        <div>
           <div class="section">
             <div class="row" id="returned-recipes">
               <div class="col s3">
                 <div class="card card-small">
                   <div class="card-image recipe-image">
-                    <img src="../food-hound/assets/images/Creamy-Mashed-Potatoes-with-Parsley-640661.jpg">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                        class="material-icons">add</i></a>
+                    <img
+                      src="../food-hound/assets/images/Creamy-Mashed-Potatoes-with-Parsley-640661.jpg"
+                      class="circle responsive-img"
+                    />
+                    <a
+                      class="btn-floating halfway-fab waves-effect waves-light red"
+                      ><i class="material-icons">add</i></a
+                    >
                   </div>
                   <div class="card-content flow-text">
                     <span class="card-title">Card Title</span>
@@ -93,9 +83,14 @@
               <div class="col s3">
                 <div class="card card-small">
                   <div class="card-image recipe-image">
-                    <img src="../food-hound/assets/images/instant-pot-mashed-potatoes-with-sour-cream-1148417.jpg">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                        class="material-icons">add</i></a>
+                    <img
+                      src="../food-hound/assets/images/instant-pot-mashed-potatoes-with-sour-cream-1148417.jpg"
+                      class="circle responsive-img"
+                    />
+                    <a
+                      class="btn-floating halfway-fab waves-effect waves-light red"
+                      ><i class="material-icons">add</i></a
+                    >
                   </div>
                   <div class="card-content flow-text">
                     <span class="card-title">Card Title</span>
@@ -106,9 +101,14 @@
               <div class="col s3">
                 <div class="card card-small">
                   <div class="card-image recipe-image">
-                    <img src="../food-hound/assets/images/perfect-mashed-potatoes-827903.jpg">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                        class="material-icons">add</i></a>
+                    <img
+                      src="../food-hound/assets/images/perfect-mashed-potatoes-827903.jpg"
+                      class="circle responsive-img"
+                    />
+                    <a
+                      class="btn-floating halfway-fab waves-effect waves-light red"
+                      ><i class="material-icons">add</i></a
+                    >
                   </div>
                   <div class="card-content flow-text">
                     <span class="card-title">Card Title</span>
@@ -119,9 +119,13 @@
               <div class="col s3">
                 <div class="card card-small">
                   <div class="card-image recipe-image">
-                    <img src="../food-hound/assets/images/seriously-amazing-cheddar-mashed-potatoes-983603.jpg">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                        class="material-icons">add</i></a>
+                    <img
+                      src="../food-hound/assets/images/seriously-amazing-cheddar-mashed-potatoes-983603.jpg"
+                    />
+                    <a
+                      class="btn-floating halfway-fab waves-effect waves-light red"
+                      ><i class="material-icons">add</i></a
+                    >
                   </div>
                   <div class="card-content flow-text">
                     <span class="card-title">Card Title</span>
@@ -131,51 +135,70 @@
               </div>
             </div>
           </div>
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th><h4>ingredients</h4></th>
+                <th><h4>Price</h4></th>
+                <th><h4>Availability</h4></th>
+                <th><h4>Heading 4</h4></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  item 1 ingredients
+                </td>
+                <td>
+                  item 1 Price
+                </td>
+                <td>
+                  item 1 Availability
+                </td>
+                <td>
+                  item 1 heading 4
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Item 2 ingredients
+                </td>
+                <td>
+                  item 2 price
+                </td>
+                <td>
+                  item 2 Availability
+                </td>
+                <td>
+                  Item 2 heading 4
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <table class="responsive-table">
-          <thead>
-            <tr>
-              <th>Heading 1</th>
-              <th>Heading 2</th>
-              <th>Heading 3</th>
-              <th>Heading 4</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>item 1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident impedit explicabo
-                quisquam pariatur. Cum ratione dolorem placeat aut culpa ut! Deleniti necessitatibus odio rem
-                delectus voluptas voluptates fuga exercitationem quibusdam?</td>
-              <td>item 2</td>
-              <td>item 3</td>
-              <td>item 4</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
-    </img>
-  </div>
 
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
+    <footer class="page-footer">
       <div class="container">
-      © 2020 Copyright Text
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">
+              You can use rows and columns here to organize your footer content.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="assets/js/script.js"></script>
-  <script src="assets/js/materialize.js"></script>
-  <script src="assets/js/init.js"></script>
-</body>
-
+      <div class="footer-copyright">
+        <div class="container">
+          © 2020 Copyright Text
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/materialize.js"></script>
+    <script src="assets/js/init.js"></script>
+  </body>
 </html>
