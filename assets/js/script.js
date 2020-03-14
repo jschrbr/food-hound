@@ -1,21 +1,13 @@
 
 
-function buildQuery(){
-    //this is the query URL we will use to query API 
-    // var query = searchQuery;
+function buildQuery(userInput){
 
-    // var queryURL = "https://api.spoonacular.com/recipes/search?"+"query=burger"+"&apiKey=7fd63fa14b66441e9190b97a36f40c22";
-    var queryURL = "https://api.spoonacular.com/recipes/search?query=burger&apiKey=7fd63fa14b66441e9190b97a36f40c22"
-    // fetch(queryURL)
-    // .then(function(data){
-    //     console.log(data)
-    // });
+  var queryURL = "https://api.spoonacular.com/recipes/search?query=" +userInput+"&apiKey=7fd63fa14b66441e9190b97a36f40c22";
 
     $.ajax({
         url:queryURL,
         method:"GET"
     }).then(function (response){
-    
         var results = response.results;
         console.log(results)
 
@@ -33,4 +25,28 @@ function buildQuery(){
         }        
     });
 }
-buildQuery();
+
+function searchQuery(){
+    $("#recipe-search-field").on("keyup",function(event){
+        if (event.keyCode == 13){
+            event.preventDefault()
+            var userInput = $("#recipe-search-field").val().trim()
+            // return userInput
+            console.log(userInput)
+            buildQuery(userInput);
+        }; 
+    });
+}
+
+//preventing enter button to submit globally
+$(document).ready(function() {
+    $(window).keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+       return false;
+      }
+    });
+  });
+
+
+searchQuery();
