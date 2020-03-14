@@ -20,7 +20,7 @@ $(document).ready(function() {
     }).then(function(resp) {
       let rate = resp[Object.keys(resp)];
       selectSel["data-exch-rate"] = rate;
-      console.log(currencySelect.formSelect()[0]["data-exch-rate"]);
+      // console.log(currencySelect.formSelect()[0]["data-exch-rate"]);
     });
   }
 
