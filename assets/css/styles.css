@@ -22,6 +22,7 @@ nav .brand-logo {
   top: 0;
   bottom: 0;
   width: 100%;
+  height: 150px;
   max-height: 150px;
   object-fit: cover;
 }
@@ -43,4 +44,8 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+.responsive-table {
+  color: aliceblue;
 }
