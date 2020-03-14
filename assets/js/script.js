@@ -59,6 +59,10 @@ function getConversionRate(id) {
   });
 }
 
+function queryIngredients() {
+  getConversionRate($(this)[0].id);
+}
+
 function renderCards(response) {
   recipeCards.text("");
   var results = response.results;
@@ -97,10 +101,6 @@ function queryRecipe(e) {
     var query = `https://api.spoonacular.com/recipes/search?query=${query}&apiKey=7fd63fa14b66441e9190b97a36f40c22`;
     queryAPI(query, renderCards);
   }
-}
-
-function queryIngredients() {
-  getConversionRate($(this)[0].id);
 }
 
 ingredientsCard.hide();
