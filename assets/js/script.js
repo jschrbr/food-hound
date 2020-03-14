@@ -1,14 +1,30 @@
-var recipeId;
-var recipeTitle;
-var recipeImage;
-let currencySelect = $("select");
-
 $(document).ready(function() {
-  let currency = localStorage.getItem("currency");
-  if (currency) {
-    currencySelect.formSelect()[0].value = currency;
+  var recipeId;
+  var recipeTitle;
+  var recipeImage;
+  const currencySelect = $("select");
+  const selectSel = currencySelect.formSelect()[0];
+
+  function getExchRate() {
+    let currency = localStorage.getItem("currency");
+    if (currency) {
+      currencySelect.formSelect()[0].value = currency;
+    } else {
+      currency = "AUD";
+    }
+    currencySelect.formSelect();
+    url = `https://free.currconv.com/api/v7/convert?q=USD_${currency}&compact=ultra&apiKey=07b4e474a20765fec5ef`;
+    $.ajax({
+      url: url,
+      method: "GET"
+    }).then(function(resp) {
+      let rate = resp[Object.keys(resp)];
+      selectSel["data-exch-rate"] = rate;
+      console.log(currencySelect.formSelect()[0]["data-exch-rate"]);
+    });
   }
-  currencySelect.formSelect();
+
+  getExchRate();
 
   function buildQuery(userInput) {
     var queryURL =
@@ -55,13 +71,11 @@ $(document).ready(function() {
   }
 
   //preventing enter button to submit globally
-  $(document).ready(function() {
-    $(window).keydown(function(event) {
-      if (event.keyCode == 13) {
-        event.preventDefault();
-        return false;
-      }
-    });
+  $(window).keydown(function(event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
   });
 
   searchQuery();
@@ -98,8 +112,8 @@ $(document).ready(function() {
     cardTitleContainer.append(cardTitle);
     $("#returned-recipes").append(recipeCard);
   }
-
   currencySelect.on("change", function(e) {
     localStorage.setItem("currency", e.target.value);
+    getExchRate();
   });
 });
