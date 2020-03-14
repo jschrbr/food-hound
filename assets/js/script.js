@@ -4,6 +4,10 @@ var recipeImage;
 let currencySelect = $("select");
 
 $(document).ready(function() {
+  let currency = localStorage.getItem("currency");
+  if (currency) {
+    currencySelect.formSelect()[0].value = currency;
+  }
   currencySelect.formSelect();
 
   function buildQuery(userInput) {
@@ -96,6 +100,6 @@ $(document).ready(function() {
   }
 
   currencySelect.on("change", function(e) {
-    console.log(e.target.value);
+    localStorage.setItem("currency", e.target.value);
   });
 });
