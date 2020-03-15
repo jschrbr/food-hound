@@ -2,43 +2,48 @@ var recipeId;
 var recipeTitle;
 var recipeImage;
 
-function buildQuery(userInput){
-
-  var queryURL = "https://api.spoonacular.com/recipes/search?query=" +userInput+"&number=4&apiKey=7fd63fa14b66441e9190b97a36f40c22";
+function buildQuery(userInput) {
+  var queryURL =
+    "https://api.spoonacular.com/recipes/search?query=" +
+    userInput +
+    "&number=4&apiKey=7fd63fa14b66441e9190b97a36f40c22";
   // var queryURL = "https://api.spoonacular.com/recipes/search?query=burger&apiKey=7fd63fa14b66441e9190b97a36f40c22"
 
-    $.ajax({
-        url:queryURL,
-        method:"GET"
-    }).then(function (response){
-        var results = response.results;
-        console.log(results)
-        $("#returned-recipes").empty();
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    var results = response.results;
+    console.log(results);
+    $("#returned-recipes").empty();
 
-        for (index in results){
-             recipeId = results[index].id
-             recipeTitle = results[index].title
-             recipeImage = "https://spoonacular.com/recipeImages/"+ results[index].imageUrls
-            console.log(recipeId)
-            console.log(recipeImage)
-            console.log(recipeTitle)
+    for (index in results) {
+      recipeId = results[index].id;
+      recipeTitle = results[index].title;
+      recipeImage =
+        "https://spoonacular.com/recipeImages/" + results[index].imageUrls;
+      console.log(recipeId);
+      console.log(recipeImage);
+      console.log(recipeTitle);
 
-          cardBuilder(recipeId,recipeImage,recipeTitle);
-        } 
-    });
+      cardBuilder(recipeId, recipeImage, recipeTitle);
+    }
+  });
 }
 
 //this allows the user to search up a recipe
-function searchQuery(){
-    $("#recipe-search-field").on("keyup",function(event){
-        if (event.keyCode == 13){
-            event.preventDefault()
-            var userInput = $("#recipe-search-field").val().trim()
-            // return userInput
-            console.log(userInput)
-            buildQuery(userInput);
-        }; 
-    });
+function searchQuery() {
+  $("#recipe-search-field").on("keyup", function(event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      var userInput = $("#recipe-search-field")
+        .val()
+        .trim();
+      // return userInput
+      console.log(userInput);
+      buildQuery(userInput);
+    }
+  });
 }
 
 //preventing enter button to submit globally
@@ -70,6 +75,7 @@ function cardBuilder() {
   cardButton.attr("value", recipeId);
   let cardIcon = $("<i>");
   cardIcon.attr("class", "material-icons");
+  cardIcon.text("format_list_bulleted");
   let cardTitleContainer = $("<div>");
   cardTitleContainer.attr("class", "card-content flow-text");
   let cardTitle = $("<span>");
