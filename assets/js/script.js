@@ -91,3 +91,14 @@ function cardBuilder() {
   cardTitleContainer.append(cardTitle);
   $("#returned-recipes").append(recipeCard);
 }
+
+function ingredientsBuilder {
+  let ingredientResult = $("<tr>")
+  let ingredient = $("<td>");
+  ingredientResult.append(ingredient)
+  let ingredientPrice = $("<td>");
+  ingredientResult.append(ingredientPrice)
+  let ingredientAvailability = $("<td>");
+  ingredientResult.append(ingredientAvailability)
+  $("ingredients-list").append(ingredientResult)
+}
