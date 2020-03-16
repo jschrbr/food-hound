@@ -36,18 +36,36 @@
     class="red accent-4"
     role="navigation"
   >
-    <div class="nav-wrapper right container">
-      <img
+    <div class="nav-wrapper row">
+            <img
         id="logo-container"
         src="assets/images/food-hound-logo.png"
         class="brand-logo left"
-      >Food Hound</img>
+      >
       <a
-        href="#"
-        data-target="nav-mobile"
-        class="sidenav-trigger"
-      ><i class="material-icons">menu</i></a>
+        id="logo-container"
+        src="../assets/images/food-hound-logo.png"
+        class="brand-logo left"
+      >Food Hound</a>
+      <ul
+        id="nav-mobile"
+        class="right"
+      >
+        <div class="input-field col s8 right">
+          <select data-exch-rate="">
+            <option
+              value=0
+              disabled
+              selected
+            >Choose currency</option>
+            <option value="AUD">AUD</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GPB</option>
+          </select>
+        </div>
+      </ul>
     </div>
+
   </nav>
 
   <div
@@ -141,6 +159,7 @@
   </div>
 
   <footer class="page-footer red accent-4">
+
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
