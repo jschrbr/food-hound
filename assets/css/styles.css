@@ -4,13 +4,19 @@ body {
   background-size: cover;
 }
 
+#logo-container {
+  height: 60px;
+}
 .input-field {
   background-color: white;
 }
-
+.sidenav-trigger {
+  float: left;
+}
 nav ul a,
 nav .brand-logo {
   color: #444;
+  position: inherit;
 }
 
 #returned-recipes img {
@@ -23,8 +29,11 @@ nav .brand-logo {
   bottom: 0;
   width: 100%;
   height: 150px;
-  max-height: 150px;
   object-fit: cover;
+}
+
+.card-title {
+  height: 150px;
 }
 
 p {
