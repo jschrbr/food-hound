@@ -1,6 +1,7 @@
 const recipeCards = $("#recipes");
 const ingredientsTitle = $("#ingredientsTitle");
 const ingredientsCard = $("#ingredientsCard");
+const preloadEl = $(".preloader-wrapper");
 
 function createEl(tag) {
   return $(`<${tag}>`);
@@ -16,6 +17,10 @@ function queryAPI(query, callback) {
 }
 
 function getIngredients(id, rate) {
+  preloadEl.show();
+  ingredientsCard.hide();
+  $("tbody").text("");
+
   queryURL =
     "https://api.spoonacular.com/recipes/" +
     id +
@@ -26,9 +31,8 @@ function getIngredients(id, rate) {
   })
     .then(function(resp) {
       ingredientsCard.show();
-
+      preloadEl.hide();
       res = resp.ingredients;
-      $("tbody").text("");
       res.forEach(ingrd => {
         let tr = createEl("tr");
         let tdName = createEl("td").text(ingrd.name);
@@ -64,7 +68,8 @@ function queryIngredients() {
 }
 
 function renderCards(response) {
-  recipeCards.text("");
+  preloadEl.hide();
+
   var results = response.results;
   results.forEach(result => {
     let recipeID = result.id;
@@ -98,10 +103,16 @@ function queryRecipe(e) {
   e.preventDefault();
   query = $("#search").val();
   if (query !== "") {
+    ingredientsCard.hide();
+    preloadEl.show();
+
+    recipeCards.text("");
+
     var query = `https://api.spoonacular.com/recipes/search?query=${query}&apiKey=7fd63fa14b66441e9190b97a36f40c22`;
     queryAPI(query, renderCards);
   }
 }
+preloadEl.hide();
 
 ingredientsCard.hide();
 
