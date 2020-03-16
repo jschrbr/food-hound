@@ -4,13 +4,19 @@ body {
   background-size: cover;
 }
 
+#logo-container {
+  height: 60px;
+}
 .input-field {
   background-color: white;
 }
-
+.sidenav-trigger {
+  float: left;
+}
 nav ul a,
 nav .brand-logo {
   color: #444;
+  position: inherit;
 }
 
 #returned-recipes img {
