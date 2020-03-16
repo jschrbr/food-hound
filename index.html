@@ -1,137 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Food Hound</title>
 
-    <!-- CSS  -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/css/materialize.css"
-      type="text/css"
-      rel="stylesheet"
-      media="screen,projection"
-    />
-    <link
-      href="assets/css/styles.css"
-      type="text/css"
-      rel="stylesheet"
-      media="screen,projection"
-    />
-  </head>
+<head>
+  <meta
+    http-equiv="Content-Type"
+    content="text/html; charset=UTF-8"
+  />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+  <title>Food Hound</title>
 
-  <body>
-    <nav class="white" role="navigation">
-      <div class="nav-wrapper container">
-        <a
-          id="logo-container"
-          src="../assets/images/food-hound-logo.png"
-          class="brand-logo"
-          >Food Hound</a
-        >
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
-          ><i class="material-icons">menu</i></a
-        >
-      </div>
-    </nav>
+  <!-- CSS  -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link
+    href="assets/css/materialize.css"
+    type="text/css"
+    rel="stylesheet"
+    media="screen,projection"
+  />
+  <link
+    href="assets/css/styles.css"
+    type="text/css"
+    rel="stylesheet"
+    media="screen,projection"
+  />
+</head>
 
-    <div id="index-banner" class="container">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <div class="row center">
-            <h5 class="header col s12 light">
-              Search a recipe and find out where to get the ingredients
-            </h5>
-          </div>
-          <div class="row center">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="recipe-search-field" type="text" />
-                  <label for="text">Search for a recipe</label>
-                </div>
-              </div>
-            </form>
-          </div>
-          <br /><br />
+<body>
+  <nav
+    class="white"
+    role="navigation"
+  >
+    <div class="nav-wrapper row">
+      <a
+        id="logo-container"
+        src="../assets/images/food-hound-logo.png"
+        class="brand-logo left"
+      >Food Hound</a>
+      <ul
+        id="nav-mobile"
+        class="right"
+      >
+        <div class="input-field col s8 right">
+          <select data-exch-rate="">
+            <option
+              value=0
+              disabled
+              selected
+            >Choose currency</option>
+            <option value="AUD">AUD</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GPB</option>
+          </select>
         </div>
-        <div>
-          <div class="section">
-            <div class="row" id="returned-recipes">
-              <div class="col s3">
+      </ul>
+    </div>
+
+  </nav>
+
+  <div
+    id="index-banner"
+    class="container"
+  >
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">
+            Search a recipe and find out where to get the ingredients
+          </h5>
+        </div>
+        <div class="row center">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="recipe-search-field"
+                  type="text"
+                />
+                <label for="text">Search for a recipe</label>
               </div>
+            </div>
+          </form>
+        </div>
+        <br /><br />
+      </div>
+      <div>
+        <div class="section">
+          <div
+            class="row"
+            id="returned-recipes"
+          >
+            <div class="col s3">
             </div>
           </div>
         </div>
+      </div>
 
-          <table class="responsive-table">
-            <thead>
-              <tr>
-                <th><h4>ingredients</h4></th>
-                <th><h4>Price</h4></th>
-                <th><h4>Availability</h4></th>
-                <th><h4>Heading 4</h4></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  item 1 ingredients
-                </td>
-                <td>
-                  item 1 Price
-                </td>
-                <td>
-                  item 1 Availability
-                </td>
-                <td>
-                  item 1 heading 4
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Item 2 ingredients
-                </td>
-                <td>
-                  item 2 price
-                </td>
-                <td>
-                  item 2 Availability
-                </td>
-                <td>
-                  Item 2 heading 4
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>
+              <h4>ingredients</h4>
+            </th>
+            <th>
+              <h4>Price</h4>
+            </th>
+            <th>
+              <h4>Availability</h4>
+            </th>
+            <th>
+              <h4>Heading 4</h4>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              item 1 ingredients
+            </td>
+            <td>
+              item 1 Price
+            </td>
+            <td>
+              item 1 Availability
+            </td>
+            <td>
+              item 1 heading 4
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Item 2 ingredients
+            </td>
+            <td>
+              item 2 price
+            </td>
+            <td>
+              item 2 Availability
+            </td>
+            <td>
+              Item 2 heading 4
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">
+            You can use rows and columns here to organize your footer content.
+          </p>
         </div>
       </div>
     </div>
-
-    <footer class="page-footer">
+    <div class="footer-copyright">
       <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">
-              You can use rows and columns here to organize your footer content.
-            </p>
-          </div>
-        </div>
+        © 2020 Copyright Text
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © 2020 Copyright Text
-        </div>
-      </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/materialize.js"></script>
-    <script src="assets/js/init.js"></script>
-  </body>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/materialize.js"></script>
+  <script src="assets/js/init.js"></script>
+</body>
+
 </html>
