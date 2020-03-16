@@ -14,12 +14,12 @@ main {
 }
 
 #logo {
-  margin: 15px 0px 0px 15px;
+  margin: 20px;
 }
 
 @media screen and (max-width: 600px) {
   #logo {
-    margin: 7px 0px 0px 7px;
+    margin: 12px;
   }
 }
 
@@ -50,4 +50,8 @@ main {
 .flex-wrap {
   flex-wrap: wrap;
   align-items: center;
+}
+
+.currency {
+  margin-top: 5px;
 }

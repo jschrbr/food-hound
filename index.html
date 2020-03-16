@@ -41,20 +41,44 @@
     role="navigation"
   >
     <div class="nav-wrapper">
-      <span class="fill-space"></span>
+      <div class="row">
 
-      <img
-        src="./assets/images/food-hound-logo.png"
-        width=80
-        height="50"
-        id="logo"
-      >
-      <span class="fill-space"></span>
-      <a
-        id="logo-container"
-        class="brand-logo black-text center"
-      >food hound</a>
-      <span class="fill-space"></span>
+
+        <div class="col">
+          <img
+            src="./assets/images/food-hound-logo.png"
+            width=65
+            height=45
+            id="logo"
+          >
+        </div>
+        <div class="col">
+          <a
+            id="logo-container"
+            class="brand-logo black-text center "
+          >food hound</a>
+        </div>
+        <div class="col s2 right currency">
+          <ul id="nav-mobile">
+            <div class="input-field amber">
+              <select
+                data-exch-rate="1.0"
+                class="amber"
+              >
+                <option
+                  value=0
+                  disabled
+                  selected
+                >Choose currency</option>
+                <option value="AUD">AUD</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GPB</option>
+              </select>
+            </div>
+          </ul>
+        </div>
+      </div>
+
 
     </div>
   </nav>
