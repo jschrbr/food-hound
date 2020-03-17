@@ -4,6 +4,7 @@ $(document).ready(function() {
   var recipeImage;
   const currencySelect = $("select");
   const selectSel = currencySelect.formSelect()[0];
+  $(".sidenav").sidenav();
 
   function getExchRate() {
     let currency = localStorage.getItem("currency");

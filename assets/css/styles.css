@@ -5,7 +5,7 @@ body {
 }
 
 #logo-container {
-  height: 60px;
+  height: 30px;
 }
 .input-field {
   background-color: white;
@@ -55,6 +55,8 @@ main {
   flex: 1 0 auto;
 }
 
-.responsive-table {
-  color: aliceblue;
+.table {
+  background-color: yellow;
+  color: black;
+  margin-bottom: 10px;
 }
