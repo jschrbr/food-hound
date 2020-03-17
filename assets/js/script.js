@@ -24,7 +24,6 @@ $(document).ready(function() {
     });
   }
 
-
   getExchRate();
 
   function buildQuery(userInput) {
@@ -71,7 +70,6 @@ $(document).ready(function() {
     });
   }
 
-
   //preventing enter button to submit globally
   $(window).keydown(function(event) {
     if (event.keyCode == 13) {
@@ -82,20 +80,17 @@ $(document).ready(function() {
 
   searchQuery();
 
+  function ingredientsBuilder() {
+    let ingredientResult = $("<tr>");
+    let ingredient = $("<td>");
+    ingredientResult.append(ingredient);
+    let ingredientPrice = $("<td>");
+    ingredientResult.append(ingredientPrice);
+    let ingredientAvailability = $("<td>");
+    ingredientResult.append(ingredientAvailability);
+    $("ingredients-list").append(ingredientResult);
+  }
 
-
-function ingredientsBuilder() {
-  let ingredientResult = $("<tr>");
-  let ingredient = $("<td>");
-  ingredientResult.append(ingredient);
-  let ingredientPrice = $("<td>");
-  ingredientResult.append(ingredientPrice);
-  let ingredientAvailability = $("<td>");
-  ingredientResult.append(ingredientAvailability);
-  $("ingredients-list").append(ingredientResult);
-}
-
-  
   function cardBuilder() {
     let recipeCard = $("<div>");
     recipeCard.attr("class", "col s6 m3");
@@ -113,12 +108,12 @@ function ingredientsBuilder() {
     cardButton.attr("value", recipeId);
     let cardIcon = $("<i>");
     cardIcon.attr("class", "material-icons");
+    cardIcon.text("format_list_bulleted");
     let cardTitleContainer = $("<div>");
     cardTitleContainer.attr("class", "card-content flow-text");
     let cardTitle = $("<span>");
     cardTitle.attr("class", "card-title");
     cardTitle.text(recipeTitle);
-
     recipeCard.append(cardContainer);
     cardContainer.append(cardImageContainer);
     cardImageContainer.append(cardImage);
@@ -133,4 +128,3 @@ function ingredientsBuilder() {
     getExchRate();
   });
 });
-
