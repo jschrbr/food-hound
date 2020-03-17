@@ -4,6 +4,7 @@ $(document).ready(function() {
   var recipeImage;
   const currencySelect = $("select");
   const selectSel = currencySelect.formSelect()[0];
+  $(".sidenav").sidenav();
 
   function getExchRate() {
     let currency = localStorage.getItem("currency");
@@ -84,10 +85,10 @@ $(document).ready(function() {
     let ingredientResult = $("<tr>");
     let ingredient = $("<td>");
     ingredientResult.append(ingredient);
+    let ingredientQuantity = $("<td>");
+    ingredientResult.append(ingredientQuantity);
     let ingredientPrice = $("<td>");
     ingredientResult.append(ingredientPrice);
-    let ingredientAvailability = $("<td>");
-    ingredientResult.append(ingredientAvailability);
     $("ingredients-list").append(ingredientResult);
   }
 
