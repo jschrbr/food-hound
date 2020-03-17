@@ -52,6 +52,11 @@ $(document).ready(function() {
 
         cardBuilder(recipeId, recipeImage, recipeTitle);
       }
+      $(".btn-floating").on("click", function() {
+        console.log("Hello");
+        console.log(this.id);
+        getIngredients(this.id);
+      });
     });
   }
 
@@ -80,14 +85,43 @@ $(document).ready(function() {
 
   searchQuery();
 
-  function ingredientsBuilder() {
+  function getIngredients(id) {
+    //remember to put parameter of IngredientsID
+    // var queryURL =
+    //   "https://api.spoonacular.com/recipes/" +
+    //   ingredientsID +
+    //   "/priceBreakdownWidget.json?apiKey=92529c25799b421d90b3ef2443e71505";
+    var queryURL =
+      "https://api.spoonacular.com/recipes/" +
+      id +
+      "/priceBreakdownWidget.json?apiKey=92529c25799b421d90b3ef2443e71505";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      var results = response.ingredients;
+      console.log(results);
+
+      for (index in results) {
+        ingredient = results[index].name;
+        console.log(ingredients);
+        ingredientPrice = results[index].price;
+        ingredientPrice = results[index].price / 100;
+        console.log(pricing);
+        ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice);
+      }
+    });
+  }
+
+  function ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice) {
     let ingredientResult = $("<tr>");
     let ingredient = $("<td>");
     ingredientResult.append(ingredient);
+    let ingredientQuantity = $("<td>");
+    ingredientResult.append(ingredientQuantity);
     let ingredientPrice = $("<td>");
     ingredientResult.append(ingredientPrice);
-    let ingredientAvailability = $("<td>");
-    ingredientResult.append(ingredientAvailability);
     $("ingredients-list").append(ingredientResult);
   }
 
@@ -105,7 +139,7 @@ $(document).ready(function() {
       "class",
       "btn-floating halfway-fab waves-effect waves-light red"
     );
-    cardButton.attr("value", recipeId);
+    cardButton.attr("id", recipeId);
     let cardIcon = $("<i>");
     cardIcon.attr("class", "material-icons");
     cardIcon.text("format_list_bulleted");
