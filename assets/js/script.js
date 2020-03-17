@@ -53,10 +53,12 @@ $(document).ready(function() {
 
         cardBuilder(recipeId, recipeImage, recipeTitle);
       }
+
       $(".btn-floating").on("click", function() {
         console.log("Hello");
         console.log(this.id);
         getIngredients(this.id);
+        $(".ingredients-list").empty();
       });
     });
   }
@@ -106,10 +108,11 @@ $(document).ready(function() {
 
       for (index in results) {
         ingredient = results[index].name;
-        console.log(ingredients);
+        console.log(ingredient);
         ingredientPrice = results[index].price;
-        ingredientPrice = results[index].price / 100;
-        console.log(pricing);
+        ingredientPrice = (results[index].price / 100).toFixed(2);
+        console.log(ingredientPrice);
+        ingredientQuantity = "HELLO PLS FILL THIS IN";
         ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice);
       }
     });
@@ -117,13 +120,13 @@ $(document).ready(function() {
 
   function ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice) {
     let ingredientResult = $("<tr>");
-    let ingredient = $("<td>");
-    ingredientResult.append(ingredient);
-    let ingredientQuantity = $("<td>");
-    ingredientResult.append(ingredientQuantity);
-    let ingredientPrice = $("<td>");
-    ingredientResult.append(ingredientPrice);
-    $("ingredients-list").append(ingredientResult);
+    let ingredientList = $("<td>").text(ingredient);
+    ingredientResult.append(ingredientList);
+    let ingredientQuantityList = $("<td>").text(ingredientQuantity);
+    ingredientResult.append(ingredientQuantityList);
+    let ingredientPriceList = $("<td>").text(ingredientPrice);
+    ingredientResult.append(ingredientPriceList);
+    $(".ingredients-list").append(ingredientResult);
   }
 
   function cardBuilder() {
