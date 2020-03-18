@@ -112,7 +112,11 @@ $(document).ready(function() {
         ingredientPrice = results[index].price;
         ingredientPrice = (results[index].price / 100).toFixed(2);
         console.log(ingredientPrice);
-        ingredientQuantity = "HELLO PLS FILL THIS IN";
+        ingredientQuantity =
+          results[index].amount.metric.value +
+          " " +
+          results[index].amount.metric.unit;
+        console.log(ingredientQuantity);
         ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice);
       }
     });
