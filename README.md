@@ -31,345 +31,178 @@ Once the user presses ENTER, it will call the API and render the ingredients lis
 
 <img alt="button" src= assets/images/button-for-ingredients.PNG width= 100%/>
 
+## API choices
+
+## Challenges
+
+## Roadmap
+
+# Review
+
 ## Page layout
+
+### HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Food Hound</title>
+  </head>
+
+  <body>
+    <nav></nav>
+    <!-- main content search and results -->
+    <main class="container">
+      <!-- saarch container -->
+      <div class="search container"></div>
+      <!-- recipes -->
+      <div class="recipes"></div>
+      <!-- table -->
+      <table class="ingredients-table"></table>
+    </main>
+
+    <footer class="page-footer red accent-4"></footer>
+  </body>
+</html>
+```
 
 The page layout utilises the [Materialize](https://materializecss.com/) front end framework to create a responsive webpage. By using this framework we were able to fast-track creation of elements on the html and css design. The framework enables a full page and all of it's internal elements to respond to the size and format of the users screen when viewing the webpage.
 
 The head of the document calls on the [Materialize](https://materializecss.com/) stylesheet, [Google material fonts](https://material.io/resources/icons/?style=baseline) and our own CSS stylesheet.
 
-```html
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<link href="assets/css/materialize.css" />
-<link href="assets/css/styles.css" />
-```
-
 Individual changes in styling are controlled by the CSS stylesheet where required. For example the placement and color of the Page title;
 
-```css
-nav ul a,
-nav .brand-logo {
-  color: #ffffff;
-  position: inherit;
-}
-```
-
 The header of the page includes the site name and also a drop down box for the users currency preference controlled by Materialize classes utilised sitewide.
-
-```css
-.red .accent-4 .amber-text
-```
-
-```html
-<nav class="nav-extended red accent-4">
-  <div class="nav-wrapper row">
-    <div class="col s5 right">
-      <div class="input-field red accent-4 amber-text">
-        <!-- code for the currency dropdown goes here -->
-      </div>
-    </div>
-    <div class="col">
-      <!-- code for the logo and title goes here -->
-    </div>
-  </div>
-</nav>
-```
 
 Below there is the main body of the page that is broken down into three main elements. Each incorporates id's which are used to link to javascript functionality. These are;
 
 - the search field within a form tag. The search field is where a user can input the recipe that they are wishing to find and is a simple text input field
 
-```html
-<form>
-    <div class="input-field red accent-4 white-text">
-        <input id="recipe-search-field"/>
-        <label recipe-search-field">Enter a dish</label>
-    </div>
-</form>
-```
-
 - the returned recipe cards area,
 
-```html
-<div class="section">
-  <div class="row" id="returned-recipes"></div>
-</div>
-```
-
 - and the ingredients table.
-
-```html
-<table class="table">
-  <thead>
-    <tr>
-      <th>
-        Ingredients
-      </th>
-      <th>
-        Quantity
-      </th>
-      <th>
-        Price
-      </th>
-    </tr>
-  </thead>
-  <tbody id="ingredients-list"></tbody>
-</table>
-```
 
 The footer includes a link to this Github repository and copyright information.
 
 ## Get Recipe
 
-### Lookup component
+### Javascript
 
-The code below defines the search bar from the materialize css library.
-The element must be contained inside that input field.
+```js
+function cardBuilder(content) {
+  // build materialize card with jquery functions
+  // fills card content with query response
+  // renders cards on page
+}
 
-```html
-<div class="input-field red accent-4 white-text">
-  <input id="recipe-search-field" type="text" class="white-text" />
-</div>
+function buildQuery() {
+  // get form input
+  // query the api
+  // Loop through results and send content to cardbuilder
+  cardBuilder(content);
+}
+
+// Form submit event listener
+$("form").submit(buildQuery);
 ```
+
+The code below defines the search bar from the materialize css library. The element must be contained inside that input field.
 
 Under the section class, materialize cards were utilised to show returned recipes when user inputs a search query.
 
-```html
-<div class="section">
-  <div class="row" id="returned-recipes">
-    <!-- code goes here -->
-  </div>
-</div>
-```
-
 The structure of the card builder includes an image, a floating button and a card title. In order for the recipe to render it's ingredients list a value was attribute to the button.
-
-```js
-function cardBuilder() {
-  let recipeCard = $("<div>");
-  recipeCard.attr("class", "col s6 m3");
-  let cardContainer = $("<div>");
-  cardContainer.attr("class", "card");
-  let cardImageContainer = $("<div>");
-  cardImageContainer.attr("class", "card-image recipe-image");
-  let cardImage = $("<img>");
-  cardImage.attr("src", recipeImage);
-  let cardButton = $("<a>");
-  cardButton.attr(
-    "class",
-    "btn-floating halfway-fab waves-effect waves-light red"
-  );
-  cardButton.attr("id", recipeId);
-  let cardIcon = $("<i>");
-  cardIcon.attr("class", "material-icons");
-  cardIcon.text("format_list_bulleted");
-  let cardTitleContainer = $("<div>");
-  cardTitleContainer.attr("class", "card-content flow-text");
-  let cardTitle = $("<span>");
-  cardTitle.attr("class", "card-title");
-  cardTitle.text(recipeTitle);
-  recipeCard.append(cardContainer);
-  cardContainer.append(cardImageContainer);
-  cardImageContainer.append(cardImage);
-  cardImageContainer.append(cardButton);
-  cardButton.append(cardIcon);
-  cardContainer.append(cardTitleContainer);
-  cardTitleContainer.append(cardTitle);
-  $("#returned-recipes").append(recipeCard);
-}
-```
-
-### The call
 
 The url query string is built get the ID, title and image, it is used in the below code.
 
-```js
-var queryURL = "recipeURL";
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      var results = response.results;
-      $("#returned-recipes").empty();
-
-      for (index in results) {
-        recipeId = results[index].id;
-        recipeTitle = results[index].title;
-        recipeImage =
-          "https://spoonacular.com/recipeImages/" + results[index].imageUrls;
-      }
-```
-
-### The listener
-
 We also set up a listener to monitor the change when user hits ENTER.
-
-```js
-$("form").submit(function(event) {
-  event.preventDefault();
-  var userInput = $("#recipe-search-field")
-    .val()
-    .trim();
-  // return userInput
-  buildQuery(userInput);
-});
-```
 
 ## Ingredient lookup
 
-### Getting ingredients from API call
-
-The code below defines the search url using the recipe ID that is stored in the recipe card button value.
+### Javascript
 
 ```js
+function cardBuilder(content) {
+  $(".btn-floating").on("click", getIngredients);
+}
+
+function ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice) {}
+
 function getIngredients(id) {
-    var queryURL =
-      "https://api.spoonacular.com/recipes/" +
-      id +
-      "/priceBreakdownWidget.json?apiKey=92529c25799b421d90b3ef2443e71505";
-```
-
-The structure of the ingredients is a row within a table and is built within the ingredientsBuilder function and appended to the html.
-
-```js
-function ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice) {
-  let ingredientResult = $("<tr>");
-  let ingredientList = $("<td>").text(ingredient);
-  ingredientResult.append(ingredientList);
-  let ingredientQuantityList = $("<td>").text(ingredientQuantity);
-  ingredientResult.append(ingredientQuantityList);
-  let ingredientPriceList = $("<td>").text(ingredientPrice);
-  ingredientResult.append(ingredientPriceList);
-  $(".ingredients-list").append(ingredientResult);
+  // get form input
+  // query the api
+  // Loop through results and send content to cardbuilder
+  ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice);
 }
 ```
 
-### The call
+The code below defines the search url using the recipe ID that is stored in the recipe card button value.
+
+The structure of the ingredients is a row within a table and is built within the ingredientsBuilder function and appended to the html.
 
 The url query that was built with the recipe ID is used to make the AJAX call
 
-```js
-$.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      var results = response.ingredients;
-```
-
-### The listener
-
 The listener for the ingredients call is built within the buildQuery function so that once a recipe card is created the button on it is being listened to.
-
-```js
-function buildQuery(userInput) {
-  --< >--
-$(".btn-floating").on("click", function() {
-        getIngredients(this.id);
-        $(".ingredients-list").empty();
-```
 
 The response needs to be rendered to the page using the JQuery link to the html ID "ingredients-list"
 
-```html
-<table>
-  <tbody class="ingredients-list"></tbody>
-</table>
-```
-
 ## Get exchange rate
 
-### Dropdown component
+### HTML
+
+```html
+<div class="input-field">
+  <select>
+    <option value="0">...</option>
+    ... ... ...
+  </select>
+</div>
+```
 
 The below code defines the dropdown component from the materialize css library.
 
 The element must be contained inside an input field.
 
-```html
-<div class="input-field red accent-4 amber-text">
-  ...
-  <!-- code goes here -->
-  ...
-</div>
-```
+### Javascript
 
-The input uses materialize classes to match the site theme.
+```js
+const currencySelect = $("select");
 
-```html
-.red .accent-4 .amber-text
+function getExchRate() {
+  // Get selection from local storage
+  // Validate for initial use
+  // make api call
+  // save rate to html attribute
+}
+
+getExchRate();
+
+function getIngredients() {
+  // grab rate from html
+  // rate * ingredientPrice;
+}
+
+currencySelect.on("change", function() {
+  // save selection to
+  getExchRate();
+});
 ```
 
 select tag is declared with nest options, each option holds a value used when querying https://free.currencyconverterapi.com/.
 
-```html
-<select data-exch-rate="">
-  <option value="0" disabled selected> $</option>
-  <option class="amber-text" value="AUD">AUD</option>
-  <option value="USD">USD</option>
-  <option value="GBP">GPB</option>
-</select>
-```
-
-### The structure
-
 First we define some constants used throughout the code.
 
-```js
-const currencySelect = $("select");
-const selectSel = currencySelect.formSelect()[0];
-```
-
 Then we define the function then call it immediately.
-
-```js
-function getExchRate() {
-  let currency = localStorage.getItem("currency");
-  if (currency) {
-    selectSel.value = currency;
-  } else {
-    currency = "AUD";
-  }
-  currencySelect.formSelect();
-  url = "currency url";
-
-  // Make API call
-}
-
-getExchRate();
-```
 
 The code intially ensures there is a currency value for the api call. It does so by checking the `localStorage` for a previously selected option, otherwise assigning a default value `"AUD"`.
 
 The below jquery function renders the dropdown element, incase a value was retrieved from local storage
 
-```js
-currencySelect.formSelect();
-```
-
-### The call
-
 The url query string is built with the validated currency, and used in the below code.
-
-```js
-$.ajax({
-  url: url,
-  method: "GET"
-}).then(function(resp) {
-  let rate = Object.values(resp)[0];
-  selectSel["data-exch-rate"] = rate;
-});
-```
 
 The exchange rate is then set to an attribute named `"data-exch-rate"`
 
-### The listener
-
 Finally we setup a listener, to monitor for a change in the dropdown selection.
-
-```js
-currencySelect.on("change", function(e) {
-  localStorage.setItem("currency", e.target.value);
-  getExchRate();
-});
-```
 
 The selection is saved to local storage, and the `getExchRate()` function is called. Where the selection is retrieved from local stroage.
 
@@ -384,7 +217,7 @@ The selection is saved to local storage, and the `getExchRate()` function is cal
 ### Haylie Goh
 
 - Website: https://dev-hg20.github.io/profile-hw/
-- Github: [@{dev-hg20}](https://github.com/dev-hg20)
+- Github: [@dev-hg20](https://github.com/dev-hg20)
 - LinkedIn: (https://www.linkedin.com/in/haylie-goh-941bb896/)
 
 ### Name

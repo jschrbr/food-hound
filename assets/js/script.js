@@ -1,7 +1,4 @@
 $(document).ready(function() {
-  var recipeId;
-  var recipeTitle;
-  var recipeImage;
   const currencySelect = $("select");
   const selectSel = currencySelect.formSelect()[0];
 
@@ -95,7 +92,7 @@ $(document).ready(function() {
 
   function cardBuilder() {
     let recipeCard = $("<div>");
-    recipeCard.attr("class", "col s6 m3");
+    recipeCard.attr("class", "col s12 m6 l3");
     let cardContainer = $("<div>");
     cardContainer.attr("class", "card");
     let cardImageContainer = $("<div>");
