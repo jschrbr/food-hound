@@ -1,11 +1,9 @@
 body {
-  background-color: tomato;
-  background-image: url("../images/backgroundchilis.jpg");
-  background-size: cover;
+  background-color: #ff5131;
 }
 
 #logo-container {
-  height: 30px;
+  height: 40px;
 }
 .input-field {
   background-color: white;
@@ -15,8 +13,12 @@ body {
 }
 nav ul a,
 nav .brand-logo {
-  color: #444;
+  color: #ffffff;
   position: inherit;
+}
+
+#github {
+  height: 40px;
 }
 
 #returned-recipes img {
@@ -45,6 +47,7 @@ p {
     top: 0;
   }
 }
+
 body {
   display: flex;
   min-height: 100vh;
