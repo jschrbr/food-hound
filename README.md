@@ -35,19 +35,97 @@ body {
 }
 ```
 
-## Recipe lookup
+## Get recipe
+
+### Lookup component
+
+The code below defines the search bar from the materialize css library.
+
+The element must be contained inside that input field.
 
 ```html
-<!DOCTYPE html>
-<html>
-  <head></head>
-  <body></body>
-</html>
+<div class="input-field red accent-4 white-text">
+  <input id="recipe-search-field" type="text" class="white-text" />
+</div>
 ```
 
+Under the section class, materialize cards were utilised to show returned recipes when user inputs a search query.
+
+```html
+<div class="section">
+  <div class="row" id="returned-recipes">
+    <!-- code goes here -->
+  </div>
+</div>
+```
+
+The structure of the card builder includes an image, a floating button and a card title. In order for the recipe to render it's ingredients list a value was attribute to the button.
+
 ```js
-let one = 1;
-console.log(one);
+function cardBuilder() {
+  let recipeCard = $("<div>");
+  recipeCard.attr("class", "col s6 m3");
+  let cardContainer = $("<div>");
+  cardContainer.attr("class", "card");
+  let cardImageContainer = $("<div>");
+  cardImageContainer.attr("class", "card-image recipe-image");
+  let cardImage = $("<img>");
+  cardImage.attr("src", recipeImage);
+  let cardButton = $("<a>");
+  cardButton.attr(
+    "class",
+    "btn-floating halfway-fab waves-effect waves-light red"
+  );
+  cardButton.attr("id", recipeId);
+  let cardIcon = $("<i>");
+  cardIcon.attr("class", "material-icons");
+  cardIcon.text("format_list_bulleted");
+  let cardTitleContainer = $("<div>");
+  cardTitleContainer.attr("class", "card-content flow-text");
+  let cardTitle = $("<span>");
+  cardTitle.attr("class", "card-title");
+  cardTitle.text(recipeTitle);
+  recipeCard.append(cardContainer);
+  cardContainer.append(cardImageContainer);
+  cardImageContainer.append(cardImage);
+  cardImageContainer.append(cardButton);
+  cardButton.append(cardIcon);
+  cardContainer.append(cardTitleContainer);
+  cardTitleContainer.append(cardTitle);
+  $("#returned-recipes").append(recipeCard);
+}
+```
+
+### The call
+
+```js
+var queryURL = "recipeURL";
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      var results = response.results;
+      $("#returned-recipes").empty();
+
+      for (index in results) {
+        recipeId = results[index].id;
+        recipeTitle = results[index].title;
+        recipeImage =
+          "https://spoonacular.com/recipeImages/" + results[index].imageUrls;
+      }
+```
+
+### The listener
+
+```js
+$("form").submit(function(event) {
+  event.preventDefault();
+  var userInput = $("#recipe-search-field")
+    .val()
+    .trim();
+  // return userInput
+  buildQuery(userInput);
+});
 ```
 
 ## Incredient lookup
@@ -88,11 +166,11 @@ console.log(one);
 - Github: [@jschrbr](https://github.com/jschrbr)
 - LinkedIn: [@techsmechs](https://linkedin.com/in/techsmechs)
 
-### Name
+### Haylie Goh
 
-- Website: https://{placeholder}.github.io/
-- Github: [@{placholder}](https://github.com/{placholder})
-- LinkedIn: [@{placholder}](https://linkedin.com/in/{placholder})
+- Website: https://dev-hg20.github.io/profile-hw/
+- Github: [@{dev-hg20}](https://github.com/dev-hg20)
+- LinkedIn: (https://www.linkedin.com/in/haylie-goh-941bb896/)
 
 ### Name
 
