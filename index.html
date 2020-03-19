@@ -68,54 +68,56 @@
     </div>
   </nav>
 
-  <div
-    id="index-banner"
-    class="container"
-  >
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="card center">
-          <span class="card-title">Search for a recipe</span>
-          <div class="card-content">
-            <form>
-              <div class="input-field">
-                <input
-                  id="recipe-search-field"
-                  type="text"
-                />
-                <label for="recipe-search-field">Enter a dish</label>
-              </div>
-            </form>
+  <main>
+    <div
+      id="index-banner"
+      class="container"
+    >
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="card center">
+            <span class="card-title">Search for a recipe</span>
+            <div class="card-content">
+              <form>
+                <div class="input-field">
+                  <input
+                    id="recipe-search-field"
+                    type="text"
+                  />
+                  <label for="recipe-search-field">Enter a dish</label>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+        <div>
+          <div class="section">
+            <div
+              class="row"
+              id="returned-recipes"
+            ></div>
           </div>
         </div>
-
+        <table class="table">
+          <thead>
+            <tr>
+              <th>
+                Ingredients
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th>
+                Price
+              </th>
+            </tr>
+          </thead>
+          <tbody class="ingredients-list"></tbody>
+        </table>
       </div>
-      <div>
-        <div class="section">
-          <div
-            class="row"
-            id="returned-recipes"
-          ></div>
-        </div>
-      </div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>
-              Ingredients
-            </th>
-            <th>
-              Quantity
-            </th>
-            <th>
-              Price
-            </th>
-          </tr>
-        </thead>
-        <tbody class="ingredients-list"></tbody>
-      </table>
     </div>
-  </div>
+  </main>
 
   <footer class="page-footer red accent-4">
     <div class="container">
