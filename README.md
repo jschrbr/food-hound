@@ -160,7 +160,7 @@ function cardBuilder(content) {
 </div>
 ```
 
-> The below code defines the dropdown component from the materialize css library. The element must be contained inside an input field.
+> The below code defines the dropdown component from the materialize css library. The element must be contained inside an input field. select tag is declared with nest options, each option holds a value used when querying https://free.currencyconverterapi.com/.
 
 ### Javascript
 
@@ -187,7 +187,7 @@ currencySelect.on("change", function() {
 });
 ```
 
-> select tag is declared with nest options, each option holds a value used when querying https://free.currencyconverterapi.com/. First we define some constants used throughout the code. Then we define the function then call it immediately. The code intially ensures there is a currency value for the api call. It does so by checking the `localStorage` for a previously selected option, otherwise assigning a default value `"AUD"`. The below jquery function renders the dropdown element, incase a value was retrieved from local storage The url query string is built with the validated currency, and used in the below code. The exchange rate is then set to an attribute named `"data-exch-rate"` Finally we setup a listener, to monitor for a change in the dropdown selection. The selection is saved to local storage, and the `getExchRate()` function is called. Where the selection is retrieved from local stroage.
+> First we define some constants used throughout the code. Then we define the function then call it immediately. The code intially ensures there is a currency value for the api call. It does so by checking the `localStorage` for a previously selected option, otherwise assigning a default value `"AUD"`. The below jquery function renders the dropdown element, incase a value was retrieved from local storage The url query string is built with the validated currency, and used in the below code. The exchange rate is then set to an attribute named `"data-exch-rate"` Finally we setup a listener, to monitor for a change in the dropdown selection. The selection is saved to local storage, and the `getExchRate()` function is called. Where the selection is retrieved from local stroage.
 
 ## Contributors
 
