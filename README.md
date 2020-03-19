@@ -87,7 +87,7 @@ The input uses materialize classes to match the site theme.
 .red .accent-4 .amber-text
 ```
 
-select tag is declared with nest
+select tag is declared with nest options, each option holds a value used when querying https://free.currencyconverterapi.com/.
 
 ```html
 <select data-exch-rate="">
@@ -98,11 +98,19 @@ select tag is declared with nest
 </select>
 ```
 
+### The structure
+
+First we define some constants used throughout the code.
+
+```js
+const currencySelect = $("select");
+const selectSel = currencySelect.formSelect()[0];
+```
+
+Then we define the function
+
 ```js
 function getExchRate() {
-  const currencySelect = $("select");
-  const selectSel = currencySelect.formSelect()[0];
-
   let currency = localStorage.getItem("currency");
   if (currency) {
     selectSel.value = currency;
@@ -111,16 +119,36 @@ function getExchRate() {
   }
   currencySelect.formSelect();
   url = "currency url";
-  $.ajax({
-    url: url,
-    method: "GET"
-  }).then(function(resp) {
-    let rate = Object.values(resp)[0];
-    selectSel["data-exch-rate"] = rate;
-  });
-}
-getExchRate();
 
+  // Make API call
+}
+
+getExchRate();
+```
+
+### The call
+
+```js
+let currency = localStorage.getItem("currency");
+if (currency) {
+  selectSel.value = currency;
+} else {
+  currency = "AUD";
+}
+currencySelect.formSelect();
+url = "currency url";
+$.ajax({
+  url: url,
+  method: "GET"
+}).then(function(resp) {
+  let rate = Object.values(resp)[0];
+  selectSel["data-exch-rate"] = rate;
+});
+```
+
+### The listener
+
+```js
 currencySelect.on("change", function(e) {
   localStorage.setItem("currency", e.target.value);
   getExchRate();
