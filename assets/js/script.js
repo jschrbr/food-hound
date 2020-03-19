@@ -14,7 +14,7 @@ $(document).ready(function() {
       currency = "AUD";
     }
     currencySelect.formSelect();
-    url = `https://free.currconv.com/api/v7/convert?q=USD_${currency}&compact=ultra&apiKey=07b4e474a20765fec5ef`;
+    url = `https://free.currconv.com/api/v7/convert?q=USD_${currency}&compact=ultra&apiKey=8b8792dc7786b5293e29`;
     $.ajax({
       url: url,
       method: "GET"
@@ -32,7 +32,6 @@ $(document).ready(function() {
       "https://api.spoonacular.com/recipes/search?query=" +
       userInput +
       "&number=4&apiKey=7fd63fa14b66441e9190b97a36f40c22";
-    // var queryURL = "https://api.spoonacular.com/recipes/search?query=burger&apiKey=7fd63fa14b66441e9190b97a36f40c22"
 
     $.ajax({
       url: queryURL,
@@ -56,20 +55,6 @@ $(document).ready(function() {
     });
   }
 
-  //this allows the user to search up a recipe
-  function searchQuery() {
-    $("#recipe-search-field").on("keyup", function(event) {
-      if (event.keyCode == 13) {
-        event.preventDefault();
-        var userInput = $("#recipe-search-field")
-          .val()
-          .trim();
-        // return userInput
-        buildQuery(userInput);
-      }
-    });
-  }
-
   //preventing enter button to submit globally
   $(window).keydown(function(event) {
     if (event.keyCode == 13) {
@@ -77,8 +62,6 @@ $(document).ready(function() {
       return false;
     }
   });
-
-  searchQuery();
 
   function getIngredients(id) {
     var queryURL =
@@ -151,5 +134,16 @@ $(document).ready(function() {
   currencySelect.on("change", function(e) {
     localStorage.setItem("currency", e.target.value);
     getExchRate();
+  });
+  //this allows the user to search up a recipe
+  $("#recipe-search-field").on("keyup", function(event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      var userInput = $("#recipe-search-field")
+        .val()
+        .trim();
+      // return userInput
+      buildQuery(userInput);
+    }
   });
 });
