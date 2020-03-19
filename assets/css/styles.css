@@ -1,11 +1,9 @@
 body {
-  background-color: tomato;
-  background-image: url("../images/backgroundchilis.jpg");
-  background-size: cover;
+  background-color: #ff5131;
 }
 
 #logo-container {
-  height: 30px;
+  height: 40px;
 }
 .input-field {
   background-color: white;
@@ -15,8 +13,12 @@ body {
 }
 nav ul a,
 nav .brand-logo {
-  color: #444;
+  color: #ffffff;
   position: inherit;
+}
+
+#github {
+  height: 40px;
 }
 
 #returned-recipes img {
@@ -44,7 +46,11 @@ p {
   #index-banner .section {
     top: 0;
   }
+  .nav-wrapper {
+    margin-top: 0px;
+  }
 }
+
 body {
   display: flex;
   min-height: 100vh;
@@ -59,4 +65,8 @@ main {
   background-color: yellow;
   color: black;
   margin-bottom: 10px;
+}
+
+.nav-wrapper {
+  margin-top: 20px;
 }

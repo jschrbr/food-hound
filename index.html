@@ -8,7 +8,7 @@
   />
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1" 
+    content="width=device-width, initial-scale=1"
   />
   <title>Food Hound</title>
 
@@ -37,22 +37,12 @@
     role="navigation"
   >
     <div class="nav-wrapper row">
-      <img
-        id="logo-container"
-        src="assets/images/food-hound-logo.png"
-        class="left"
-      >
-      <a
-        id="logo-container"
-        src="../assets/images/food-hound-logo.png"
-        class="brand-logo left"
-      >Food Hound</a>
-      <ul id="nav-mobile">
 
-        <div class="input-field col s3 right red accent-4">
+      <div class="col s5 right">
+        <div class="input-field red accent-4">
           <select data-exch-rate="">
             <option
-              value=0
+              value="0"
               disabled
               selected
             > $</option>
@@ -61,116 +51,97 @@
             <option value="GBP">GPB</option>
           </select>
         </div>
-      </ul>
-    </div>
+      </div>
+      <div class="col">
+        <img
+          id="logo-container"
+          src="assets/images/food-hound-logo.png"
+          class="left"
+        />
+        <a
+          id="logo-container"
+          src="../assets/images/food-hound-logo.png"
+          class="brand-logo left"
+        >Food Hound</a>
+      </div>
 
+    </div>
   </nav>
 
-
-
-  <div
-    id="index-banner"
-    class="container"
-  >
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">
-            Search a recipe and find out where to get the ingredients
-          </h5>
-        </div>
-        <div class="row center">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s12">
-                <input
-                  id="recipe-search-field"
-                  type="text"
-                />
-                <label for="text">Search for a recipe</label>
-              </div>
-            </div>
-          </form>
-        </div>
-        <br /><br />
-      </div>
-      <div>
-        <div class="section">
-          <div
-            class="row"
-            id="returned-recipes"
-          >
-            <div class="col s3">
+  <main>
+    <div
+      id="index-banner"
+      class="container"
+    >
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="card center">
+            <span class="card-title">Search for a recipe</span>
+            <div class="card-content">
+              <form>
+                <div class="input-field">
+                  <input
+                    id="recipe-search-field"
+                    type="text"
+                  />
+                  <label for="recipe-search-field">Enter a dish</label>
+                </div>
+              </form>
             </div>
           </div>
-        </div>
-      </div>
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th>
-              Ingredients
-            </th>
-            <th>
-              Quantity
-            </th>
-            <th>
-              Price
-            </th>
-          </tr>
-        </thead>
-        <tbody class = "ingredients-list">
-          <tr>
-            <td>
-              1st Ingredient
-            </td>
-            <td>
-              1st Quantity
-            </td>
-            <td>
-              1st Price
-            </td>
-          </tr>
-          <tr>
-            <td>
-              2nd Ingredient
-            </td>
-            <td>
-              2nd Quantity
-            </td>
-            <td>
-              2nd price
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div>
+          <div class="section">
+            <div
+              class="row"
+              id="returned-recipes"
+            ></div>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>
+                Ingredients
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th>
+                Price
+              </th>
+            </tr>
+          </thead>
+          <tbody class="ingredients-list"></tbody>
+        </table>
+      </div>
     </div>
-  </div>
-  </div>
+  </main>
 
   <footer class="page-footer red accent-4">
-
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">
-            You can use rows and columns here to organize your footer content.
-          </p>
-        </div>
+        <p>
+          Check out our project on
+        </p>
+        <a href="https://github.com/jschrbr/food-hound"><img
+            id="github"
+            src="assets/images/GitHub_Logo_White_250x103.png"
+            target="blank"
+          /></a>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-        © 2020 Copyright Text
+        <p class="right">© 2020</p>
       </div>
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="assets/js/script.js"></script>
   <script src="assets/js/materialize.js"></script>
-  <script src="assets/js/init.js"></script>
+  <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
