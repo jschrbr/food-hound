@@ -18,7 +18,8 @@ $(document).ready(function() {
       url: url,
       method: "GET"
     }).then(function(resp) {
-      let rate = resp[Object.keys(resp)];
+      console.log(Object.values(resp)[0]);
+      let rate = Object.values(resp)[0];
       selectSel["data-exch-rate"] = rate;
     });
   }
