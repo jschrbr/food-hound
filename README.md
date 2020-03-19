@@ -202,7 +202,7 @@ $("form").submit(function(event) {
 
 ### Getting ingredients from API call
 
-The code below defines the search url using the recipe ID that is stored in the button value.
+The code below defines the search url using the recipe ID that is stored in the recipe card button value.
 
 ```js
 function getIngredients(id) {
