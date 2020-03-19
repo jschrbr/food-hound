@@ -4,12 +4,11 @@ $(document).ready(function() {
   var recipeImage;
   const currencySelect = $("select");
   const selectSel = currencySelect.formSelect()[0];
-  $(".sidenav").sidenav();
 
   function getExchRate() {
     let currency = localStorage.getItem("currency");
     if (currency) {
-      currencySelect.formSelect()[0].value = currency;
+      selectSel.value = currency;
     } else {
       currency = "AUD";
     }
@@ -21,7 +20,6 @@ $(document).ready(function() {
     }).then(function(resp) {
       let rate = resp[Object.keys(resp)];
       selectSel["data-exch-rate"] = rate;
-      // console.log(currencySelect.formSelect()[0]["data-exch-rate"]);
     });
   }
 
@@ -55,14 +53,6 @@ $(document).ready(function() {
     });
   }
 
-  //preventing enter button to submit globally
-  $(window).keydown(function(event) {
-    if (event.keyCode == 13) {
-      event.preventDefault();
-      return false;
-    }
-  });
-
   function getIngredients(id) {
     var queryURL =
       "https://api.spoonacular.com/recipes/" +
@@ -78,7 +68,10 @@ $(document).ready(function() {
       for (index in results) {
         ingredient = results[index].name;
         ingredientPrice = results[index].price;
-        ingredientPrice = (results[index].price / 100).toFixed(2);
+        ingredientPrice = (
+          (selectSel["data-exch-rate"] * results[index].price) /
+          100
+        ).toFixed(2);
         ingredientQuantity =
           results[index].amount.metric.value +
           " " +
@@ -144,6 +137,13 @@ $(document).ready(function() {
         .trim();
       // return userInput
       buildQuery(userInput);
+    }
+  });
+  //preventing enter button to submit globally
+  $(window).keydown(function(event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+      return false;
     }
   });
 });
