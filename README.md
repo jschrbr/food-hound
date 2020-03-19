@@ -15,9 +15,21 @@
 
 ## Usage
 
-```sh
-How to use the app
-```
+The below image demonstrates the application functionality:
+
+<img alt="interface" src= assets/images/user-interface.PNG width= 100%/>
+
+User can also choose a currency of their choice
+
+<img alt="currency" src= assets/images/currency-converter-dropdowm.PNG width= 100% />
+
+User will enter a recipe of their choice, in this case "burgers"
+
+<img alt="search" src= assets/images/search-recipe-functionality.PNG width= 100%/>
+
+Once the user presses ENTER, it will call the API and render the ingredients list.
+
+<img alt="button" src= assets/images/button-for-ingredients.PNG width= 100%/>
 
 ## Page layout
 
@@ -168,6 +180,8 @@ function cardBuilder() {
 
 ### The call
 
+The url query string is built get the ID, title and image, it is used in the below code.
+
 ```js
 var queryURL = "recipeURL";
     $.ajax({
@@ -186,6 +200,8 @@ var queryURL = "recipeURL";
 ```
 
 ### The listener
+
+We also set up a listener to monitor the change when user hits ENTER.
 
 ```js
 $("form").submit(function(event) {
