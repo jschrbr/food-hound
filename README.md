@@ -107,7 +107,7 @@ const currencySelect = $("select");
 const selectSel = currencySelect.formSelect()[0];
 ```
 
-Then we define the function
+Then we define the function then call it immediately.
 
 ```js
 function getExchRate() {
@@ -126,17 +126,19 @@ function getExchRate() {
 getExchRate();
 ```
 
-### The call
+The code intially ensures there is a currency value for the api call. It does so by checking the `localStorage` for a previously selected option, otherwise assigning a default value `"AUD"`.
+
+The below jqueryy function renders the dropdown element, incase a value was retrieved from local storage
 
 ```js
-let currency = localStorage.getItem("currency");
-if (currency) {
-  selectSel.value = currency;
-} else {
-  currency = "AUD";
-}
 currencySelect.formSelect();
-url = "currency url";
+```
+
+### The call
+
+The url query string is built with the validated currency, and used in the below code.
+
+```js
 $.ajax({
   url: url,
   method: "GET"
@@ -146,7 +148,11 @@ $.ajax({
 });
 ```
 
+The exchange rate is then set to an attribute names `"data-exch-rate"`
+
 ### The listener
+
+Finally we setup a listener, to monitor for a change in the dropdown selection.
 
 ```js
 currencySelect.on("change", function(e) {
@@ -154,6 +160,8 @@ currencySelect.on("change", function(e) {
   getExchRate();
 });
 ```
+
+The selection is saved to local storage, and the `getExchRate()` function is called. Where the seletion is retrieved from local stroage.
 
 ## Contributors
 
