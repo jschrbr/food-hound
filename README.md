@@ -67,18 +67,101 @@ console.log(one);
 
 ## Get exchange rate
 
+### Dropdown component
+
+The below code defines the dropdown component from the materialize css library.
+
+The element must be contained inside an input field.
+
 ```html
-<!DOCTYPE html>
-<html>
-  <head></head>
-  <body></body>
-</html>
+<div class="input-field red accent-4 amber-text">
+  ...
+  <!-- code goes here -->
+  ...
+</div>
 ```
 
-```js
-let one = 1;
-console.log(one);
+The input uses materialize classes to match the site theme.
+
+```html
+.red .accent-4 .amber-text
 ```
+
+select tag is declared with nest options, each option holds a value used when querying https://free.currencyconverterapi.com/.
+
+```html
+<select data-exch-rate="">
+  <option value="0" disabled selected> $</option>
+  <option class="amber-text" value="AUD">AUD</option>
+  <option value="USD">USD</option>
+  <option value="GBP">GPB</option>
+</select>
+```
+
+### The structure
+
+First we define some constants used throughout the code.
+
+```js
+const currencySelect = $("select");
+const selectSel = currencySelect.formSelect()[0];
+```
+
+Then we define the function then call it immediately.
+
+```js
+function getExchRate() {
+  let currency = localStorage.getItem("currency");
+  if (currency) {
+    selectSel.value = currency;
+  } else {
+    currency = "AUD";
+  }
+  currencySelect.formSelect();
+  url = "currency url";
+
+  // Make API call
+}
+
+getExchRate();
+```
+
+The code intially ensures there is a currency value for the api call. It does so by checking the `localStorage` for a previously selected option, otherwise assigning a default value `"AUD"`.
+
+The below jqueryy function renders the dropdown element, incase a value was retrieved from local storage
+
+```js
+currencySelect.formSelect();
+```
+
+### The call
+
+The url query string is built with the validated currency, and used in the below code.
+
+```js
+$.ajax({
+  url: url,
+  method: "GET"
+}).then(function(resp) {
+  let rate = Object.values(resp)[0];
+  selectSel["data-exch-rate"] = rate;
+});
+```
+
+The exchange rate is then set to an attribute named `"data-exch-rate"`
+
+### The listener
+
+Finally we setup a listener, to monitor for a change in the dropdown selection.
+
+```js
+currencySelect.on("change", function(e) {
+  localStorage.setItem("currency", e.target.value);
+  getExchRate();
+});
+```
+
+The selection is saved to local storage, and the `getExchRate()` function is called. Where the selection is retrieved from local stroage.
 
 ## Contributors
 
