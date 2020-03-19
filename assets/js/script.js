@@ -129,21 +129,12 @@ $(document).ready(function() {
     getExchRate();
   });
   //this allows the user to search up a recipe
-  $("#recipe-search-field").on("keyup", function(event) {
-    if (event.keyCode == 13) {
-      event.preventDefault();
-      var userInput = $("#recipe-search-field")
-        .val()
-        .trim();
-      // return userInput
-      buildQuery(userInput);
-    }
-  });
-  //preventing enter button to submit globally
-  $(window).keydown(function(event) {
-    if (event.keyCode == 13) {
-      event.preventDefault();
-      return false;
-    }
+  $("form").submit(function(event) {
+    event.preventDefault();
+    var userInput = $("#recipe-search-field")
+      .val()
+      .trim();
+    // return userInput
+    buildQuery(userInput);
   });
 });
