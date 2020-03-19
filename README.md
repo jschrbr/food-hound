@@ -21,26 +21,96 @@ How to use the app
 
 ## Page layout
 
+The page layout utilises the [Materialize](https://materializecss.com/) front end framework to create a responsive webpage. By using this framework we were able to fast-track creation of elements on the html and css design. The framework enables a full page and all of it's internal elements to respond to the size and format of the users screen when viewing the webpage.
+
+The head of the document calls on the [Materialize](https://materializecss.com/) stylesheet, [Google material fonts](https://material.io/resources/icons/?style=baseline) and our own CSS stylesheet.
+
 ```html
-<!DOCTYPE html>
-<html>
-  <head></head>
-  <body></body>
-</html>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link href="assets/css/materialize.css" />
+<link href="assets/css/styles.css" />
 ```
 
+Individual changes in styling are controlled by the CSS stylesheet where required. For example the placement and color of the Page title;
+
 ```css
-body {
-  margin: 20px;
+nav ul a,
+nav .brand-logo {
+  color: #ffffff;
+  position: inherit;
 }
 ```
 
-## Get recipe
+The header of the page includes the site name and also a drop down box for the users currency preference controlled by Materialize classes utilised sitewide.
+
+```css
+.red .accent-4 .amber-text
+```
+
+```html
+<nav class="nav-extended red accent-4">
+  <div class="nav-wrapper row">
+    <div class="col s5 right">
+      <div class="input-field red accent-4 amber-text">
+        <!-- code for the currency dropdown goes here -->
+      </div>
+    </div>
+    <div class="col">
+      <!-- code for the logo and title goes here -->
+    </div>
+  </div>
+</nav>
+```
+
+Below there is the main body of the page that is broken down into three main elements. Each incorporates id's which are used to link to javascript functionality. These are;
+
+- the search field within a form tag. The search field is where a user can input the recipe that they are wishing to find and is a simple text input field
+
+```html
+<form>
+    <div class="input-field red accent-4 white-text">
+        <input id="recipe-search-field"/>
+        <label recipe-search-field">Enter a dish</label>
+    </div>
+</form>
+```
+
+- the returned recipe cards area,
+
+```html
+<div class="section">
+  <div class="row" id="returned-recipes"></div>
+</div>
+```
+
+- and the ingredients table.
+
+```html
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Ingredients
+      </th>
+      <th>
+        Quantity
+      </th>
+      <th>
+        Price
+      </th>
+    </tr>
+  </thead>
+  <tbody id="ingredients-list"></tbody>
+</table>
+```
+
+The footer includes a link to this Github repository and copyright information.
+
+## Get Recipe
 
 ### Lookup component
 
 The code below defines the search bar from the materialize css library.
-
 The element must be contained inside that input field.
 
 ```html
@@ -145,18 +215,101 @@ console.log(one);
 
 ## Get exchange rate
 
+### Dropdown component
+
+The below code defines the dropdown component from the materialize css library.
+
+The element must be contained inside an input field.
+
 ```html
-<!DOCTYPE html>
-<html>
-  <head></head>
-  <body></body>
-</html>
+<div class="input-field red accent-4 amber-text">
+  ...
+  <!-- code goes here -->
+  ...
+</div>
 ```
 
-```js
-let one = 1;
-console.log(one);
+The input uses materialize classes to match the site theme.
+
+```html
+.red .accent-4 .amber-text
 ```
+
+select tag is declared with nest options, each option holds a value used when querying https://free.currencyconverterapi.com/.
+
+```html
+<select data-exch-rate="">
+  <option value="0" disabled selected> $</option>
+  <option class="amber-text" value="AUD">AUD</option>
+  <option value="USD">USD</option>
+  <option value="GBP">GPB</option>
+</select>
+```
+
+### The structure
+
+First we define some constants used throughout the code.
+
+```js
+const currencySelect = $("select");
+const selectSel = currencySelect.formSelect()[0];
+```
+
+Then we define the function then call it immediately.
+
+```js
+function getExchRate() {
+  let currency = localStorage.getItem("currency");
+  if (currency) {
+    selectSel.value = currency;
+  } else {
+    currency = "AUD";
+  }
+  currencySelect.formSelect();
+  url = "currency url";
+
+  // Make API call
+}
+
+getExchRate();
+```
+
+The code intially ensures there is a currency value for the api call. It does so by checking the `localStorage` for a previously selected option, otherwise assigning a default value `"AUD"`.
+
+The below jqueryy function renders the dropdown element, incase a value was retrieved from local storage
+
+```js
+currencySelect.formSelect();
+```
+
+### The call
+
+The url query string is built with the validated currency, and used in the below code.
+
+```js
+$.ajax({
+  url: url,
+  method: "GET"
+}).then(function(resp) {
+  let rate = Object.values(resp)[0];
+  selectSel["data-exch-rate"] = rate;
+});
+```
+
+The exchange rate is then set to an attribute named `"data-exch-rate"`
+
+### The listener
+
+Finally we setup a listener, to monitor for a change in the dropdown selection.
+
+```js
+currencySelect.on("change", function(e) {
+  localStorage.setItem("currency", e.target.value);
+  getExchRate();
+});
+```
+
+The selection is saved to local storage, and the `getExchRate()` function is called. Where the selection is retrieved from local stroage.
 
 ## Contributors
 
@@ -178,11 +331,11 @@ console.log(one);
 - Github: [@{placholder}](https://github.com/{placholder})
 - LinkedIn: [@{placholder}](https://linkedin.com/in/{placholder})
 
-### Name
+### DC Cunningham
 
-- Website: https://{placeholder}.github.io/
-- Github: [@{placholder}](https://github.com/{placholder})
-- LinkedIn: [@{placholder}](https://linkedin.com/in/{placholder})
+- Website: https://DCRevResLabs.github.io/
+- Github: [@DCRevResLabs](https://github.com/DCRevResLabs)
+- LinkedIn: [@DC-Cunningham](https://www.linkedin.com/in/DC-Cunningham)
 
 ## 🤝 Contributing
 

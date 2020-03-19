@@ -8,9 +8,7 @@ body {
 .input-field {
   background-color: white;
 }
-.sidenav-trigger {
-  float: left;
-}
+
 nav ul a,
 nav .brand-logo {
   color: #ffffff;
