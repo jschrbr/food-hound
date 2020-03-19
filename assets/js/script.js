@@ -39,7 +39,6 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(response) {
       var results = response.results;
-      console.log(results);
       $("#returned-recipes").empty();
 
       for (index in results) {
@@ -47,16 +46,10 @@ $(document).ready(function() {
         recipeTitle = results[index].title;
         recipeImage =
           "https://spoonacular.com/recipeImages/" + results[index].imageUrls;
-        console.log(recipeId);
-        console.log(recipeImage);
-        console.log(recipeTitle);
-
         cardBuilder(recipeId, recipeImage, recipeTitle);
       }
 
       $(".btn-floating").on("click", function() {
-        console.log("Hello");
-        console.log(this.id);
         getIngredients(this.id);
         $(".ingredients-list").empty();
       });
@@ -72,7 +65,6 @@ $(document).ready(function() {
           .val()
           .trim();
         // return userInput
-        console.log(userInput);
         buildQuery(userInput);
       }
     });
@@ -89,11 +81,6 @@ $(document).ready(function() {
   searchQuery();
 
   function getIngredients(id) {
-    //remember to put parameter of IngredientsID
-    // var queryURL =
-    //   "https://api.spoonacular.com/recipes/" +
-    //   ingredientsID +
-    //   "/priceBreakdownWidget.json?apiKey=92529c25799b421d90b3ef2443e71505";
     var queryURL =
       "https://api.spoonacular.com/recipes/" +
       id +
@@ -104,19 +91,15 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(response) {
       var results = response.ingredients;
-      console.log(results);
 
       for (index in results) {
         ingredient = results[index].name;
-        console.log(ingredient);
         ingredientPrice = results[index].price;
         ingredientPrice = (results[index].price / 100).toFixed(2);
-        console.log(ingredientPrice);
         ingredientQuantity =
           results[index].amount.metric.value +
           " " +
           results[index].amount.metric.unit;
-        console.log(ingredientQuantity);
         ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice);
       }
     });
