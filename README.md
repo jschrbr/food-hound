@@ -148,7 +148,7 @@ $.ajax({
 });
 ```
 
-The exchange rate is then set to an attribute names `"data-exch-rate"`
+The exchange rate is then set to an attribute named `"data-exch-rate"`
 
 ### The listener
 
@@ -161,7 +161,7 @@ currencySelect.on("change", function(e) {
 });
 ```
 
-The selection is saved to local storage, and the `getExchRate()` function is called. Where the seletion is retrieved from local stroage.
+The selection is saved to local storage, and the `getExchRate()` function is called. Where the selection is retrieved from local stroage.
 
 ## Contributors
 
