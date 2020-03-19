@@ -33,9 +33,30 @@ Once the user presses ENTER, it will call the API and render the ingredients lis
 
 ## API choices
 
+- Settled on spoonacular hoped for woolworths or equiv for product info.
+- No store api, currency converter used to convert spoonacular prices.
+
+Additional contraints
+
+- Free APIs are generaly limited
+- Front end application meant a subscription API would be expensive/complex/un-safe.
+
 ## Challenges
 
+- Selecting the apis
+- Writing the code
+- styling the site
+- Collaborating and Git
+
 ## Roadmap
+
+- Update ingrdient price on currency select
+- Search recipes by ingredient list
+- Add serving size and cooking time to cards
+- Search by cuisine
+- Increase currency list
+- Set currency default to geo-location
+- Add recipe tool
 
 # Review
 
@@ -54,7 +75,7 @@ Once the user presses ENTER, it will call the API and render the ingredients lis
     <nav></nav>
     <!-- main content search and results -->
     <main class="container">
-      <!-- saarch container -->
+      <!-- search container -->
       <div class="search container"></div>
       <!-- recipes -->
       <div class="recipes"></div>
