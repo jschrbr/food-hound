@@ -80,7 +80,9 @@ let one = 1;
 console.log(one);
 ```
 
-## Author
+## Contributors
+
+### James Schreiber
 
 - Website: https://jschrbr.github.io/
 - Github: [@jschrbr](https://github.com/jschrbr)
