@@ -198,19 +198,65 @@ $("form").submit(function(event) {
 });
 ```
 
-## Incredient lookup
+## Ingredient lookup
 
-```html
-<!DOCTYPE html>
-<html>
-  <head></head>
-  <body></body>
-</html>
-```
+### Getting ingredients from API call
+
+The code below defines the search url using the recipe ID that is stored in the button value.
 
 ```js
-let one = 1;
-console.log(one);
+function getIngredients(id) {
+    var queryURL =
+      "https://api.spoonacular.com/recipes/" +
+      id +
+      "/priceBreakdownWidget.json?apiKey=92529c25799b421d90b3ef2443e71505";
+```
+
+The structure of the ingredients is a row within a table and is built within the ingredientsBuilder function and appended to the html.
+
+```js
+function ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice) {
+  let ingredientResult = $("<tr>");
+  let ingredientList = $("<td>").text(ingredient);
+  ingredientResult.append(ingredientList);
+  let ingredientQuantityList = $("<td>").text(ingredientQuantity);
+  ingredientResult.append(ingredientQuantityList);
+  let ingredientPriceList = $("<td>").text(ingredientPrice);
+  ingredientResult.append(ingredientPriceList);
+  $(".ingredients-list").append(ingredientResult);
+}
+```
+
+### The call
+
+The url query that was built with the recipe ID is used to make the AJAX call
+
+```js
+$.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      var results = response.ingredients;
+```
+
+### The listener
+
+The listener for the ingredients call is built within the buildQuery function so that once a recipe card is created the button on it is being listened to.
+
+```js
+function buildQuery(userInput) {
+  --< >--
+$(".btn-floating").on("click", function() {
+        getIngredients(this.id);
+        $(".ingredients-list").empty();
+```
+
+The response needs to be rendered to the page using the JQuery link to the html ID "ingredients-list"
+
+```html
+<table>
+  <tbody class="ingredients-list"></tbody>
+</table>
 ```
 
 ## Get exchange rate
@@ -276,7 +322,7 @@ getExchRate();
 
 The code intially ensures there is a currency value for the api call. It does so by checking the `localStorage` for a previously selected option, otherwise assigning a default value `"AUD"`.
 
-The below jqueryy function renders the dropdown element, incase a value was retrieved from local storage
+The below jquery function renders the dropdown element, incase a value was retrieved from local storage
 
 ```js
 currencySelect.formSelect();
