@@ -67,17 +67,64 @@ console.log(one);
 
 ## Get exchange rate
 
+### Dropdown component
+
+The below code defines the dropdown component from the materialize css library.
+
+The element must be contained inside an input field.
+
 ```html
-<!DOCTYPE html>
-<html>
-  <head></head>
-  <body></body>
-</html>
+<div class="input-field red accent-4 amber-text">
+  ...
+  <!-- code goes here -->
+  ...
+</div>
+```
+
+The input uses materialize classes to match the site theme.
+
+```html
+.red .accent-4 .amber-text
+```
+
+select tag is declared with nest
+
+```html
+<select data-exch-rate="">
+  <option value="0" disabled selected> $</option>
+  <option class="amber-text" value="AUD">AUD</option>
+  <option value="USD">USD</option>
+  <option value="GBP">GPB</option>
+</select>
 ```
 
 ```js
-let one = 1;
-console.log(one);
+function getExchRate() {
+  const currencySelect = $("select");
+  const selectSel = currencySelect.formSelect()[0];
+
+  let currency = localStorage.getItem("currency");
+  if (currency) {
+    selectSel.value = currency;
+  } else {
+    currency = "AUD";
+  }
+  currencySelect.formSelect();
+  url = "currency url";
+  $.ajax({
+    url: url,
+    method: "GET"
+  }).then(function(resp) {
+    let rate = Object.values(resp)[0];
+    selectSel["data-exch-rate"] = rate;
+  });
+}
+getExchRate();
+
+currencySelect.on("change", function(e) {
+  localStorage.setItem("currency", e.target.value);
+  getExchRate();
+});
 ```
 
 ## Contributors
