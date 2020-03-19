@@ -18,7 +18,6 @@ $(document).ready(function() {
       url: url,
       method: "GET"
     }).then(function(resp) {
-      console.log(Object.values(resp)[0]);
       let rate = Object.values(resp)[0];
       selectSel["data-exch-rate"] = rate;
     });
@@ -73,6 +72,7 @@ $(document).ready(function() {
           (selectSel["data-exch-rate"] * results[index].price) /
           100
         ).toFixed(2);
+        ingredientPrice = `$${ingredientPrice}`;
         ingredientQuantity =
           results[index].amount.metric.value +
           " " +
