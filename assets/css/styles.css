@@ -46,6 +46,9 @@ p {
   #index-banner .section {
     top: 0;
   }
+  .nav-wrapper {
+    margin-top: 0px;
+  }
 }
 
 body {
@@ -62,4 +65,8 @@ main {
   background-color: yellow;
   color: black;
   margin-bottom: 10px;
+}
+
+.nav-wrapper {
+  margin-top: 20px;
 }
