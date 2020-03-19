@@ -88,6 +88,24 @@ console.log(one);
 - Github: [@jschrbr](https://github.com/jschrbr)
 - LinkedIn: [@techsmechs](https://linkedin.com/in/techsmechs)
 
+### Name
+
+- Website: https://{placeholder}.github.io/
+- Github: [@{placholder}](https://github.com/{placholder})
+- LinkedIn: [@{placholder}](https://linkedin.com/in/{placholder})
+
+### Name
+
+- Website: https://{placeholder}.github.io/
+- Github: [@{placholder}](https://github.com/{placholder})
+- LinkedIn: [@{placholder}](https://linkedin.com/in/{placholder})
+
+### Name
+
+- Website: https://{placeholder}.github.io/
+- Github: [@{placholder}](https://github.com/{placholder})
+- LinkedIn: [@{placholder}](https://linkedin.com/in/{placholder})
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jschrbr/food-hound/issues).
