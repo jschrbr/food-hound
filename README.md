@@ -12,7 +12,7 @@
 > - [Description](#description)
 > - [Usage](#usage)
 > - [Stack choices](#stack-choices)
->   - [APIs](#api)
+>   - [Third party APIs](#third-party-apis)
 >     - [Spoonacular API](#spoonacular-api)
 >     - [Free Currency Converter API](#free-currency-converter-api)
 >   - [CSS framework](#css-framework)
@@ -35,40 +35,45 @@
 
 > A simple single page application for looking up recipes. The application also has the option to convert the currency of the estimated prices.
 
+> The below image demonstrates the application functionality:
+
+> User can also choose a currency of their choice
+
+> User will enter a recipe of their choice, in this case "burgers"
+
+> Once the user presses ENTER, it will call the API and render the ingredients list.
+
 ## Usage
 
 > Basic usage:
 
 <div align="center">
-
 <img alt="interface" src= "assets/images/Food Hound.gif" width= 60%/>
 </div>
 
 > Mobile view:
 
 <div align="center">
-
 <img alt="interface" src= "assets/images/Food Hound mobile.gif" />
 </div>
 
 > Responsiveness:
 
 <div align="center">
-
 <img alt="interface" src= "assets/images/Food Hound responsiveness.gif" width= 60%/>
 </div>
 
-> The below image demonstrates the application functionality: <img alt="interface" src= assets/images/user-interface.PNG width= 100%/>
+<!-- <img alt="interface" src= assets/images/user-interface.PNG width= 100%/> -->
 
-> User can also choose a currency of their choice <img alt="currency" src= assets/images/currency-converter-dropdowm.PNG width= 100% />
+ <!-- <img alt="currency" src= assets/images/currency-converter-dropdowm.PNG width= 100% /> -->
 
-> User will enter a recipe of their choice, in this case "burgers" <img alt="search" src= assets/images/search-recipe-functionality.PNG width= 100%/>
+<!-- <img alt="search" src= assets/images/search-recipe-functionality.PNG width= 100%/> -->
 
-> Once the user presses ENTER, it will call the API and render the ingredients list.<img alt="button" src= assets/images/button-for-ingredients.PNG width= 100%/>
+<!-- <img alt="button" src= assets/images/button-for-ingredients.PNG width= 100%/> -->
 
 ## Stack choices
 
-### API
+### Third party APIs
 
 > - Settled on spoonacular hoped for woolworths or equiv for product info.
 > - No store api, currency converter used to convert spoonacular prices.
@@ -165,7 +170,3 @@ Give a ⭐️ if this project helped you!
 ---
 
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
-
-```
-
-```
