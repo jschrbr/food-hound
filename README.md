@@ -37,6 +37,18 @@
 
 ### CSS framework
 
+```sh
+.
+└── html
+    ├── head
+    └── body
+        └── main
+        |   ├── recipe search card
+        |   ├── recipe result cards
+        |   └── ingredients table
+        └── footer
+```
+
 #### Materialize CSS
 
 > - Responsive elements
@@ -53,7 +65,7 @@
 
 ## 🚧 [Roadmap](https://github.com/jschrbr/food-hound/wiki/Roadmap)
 
-Checkout whats in store.
+> Check out what we have in store.
 
 ## 🙌 Contributors
 
@@ -83,7 +95,7 @@ Checkout whats in store.
 
 ## 🤝 Contributing
 
-### 🔧 [Code](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
+> ### 🔧 [Code](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
 
 Before making contributions have a look at the general strucure of the code, in our docs.
 
@@ -100,3 +112,7 @@ Give a ⭐️ if this project helped you!
 ---
 
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+
+```
+
+```
