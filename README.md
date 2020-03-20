@@ -39,21 +39,21 @@
 
 > Basic usage:
 
-<div style="display:flex;justify-content:center; align-items: center;">
+<div align="center">
 
 <img alt="interface" src= "assets/images/Food Hound.gif" width= 60%/>
 </div>
 
 > Mobile view:
 
-<div style="display:flex;justify-content:center;">
+<div align="center">
 
 <img alt="interface" src= "assets/images/Food Hound mobile.gif" />
 </div>
 
 > Responsiveness:
 
-<div style="display:flex;justify-content:center;">
+<div align="center">
 
 <img alt="interface" src= "assets/images/Food Hound responsiveness.gif" width= 60%/>
 </div>
