@@ -1,11 +1,11 @@
 <h1 align="center">Welcome to food-hound <img width="40px" src="./assets/images/material-hound.png">
 </h1>
-<p>
+<h1>
   <img alt="Version" src="https://img.shields.io/badge/version-01.00-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/jschrbr/food-hound" target="_blank">
+  <a href="https://github.com/jschrbr/food-hound/wiki" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-</p>
+</h1>
 
 > A simple single page application for looking up recipes. The application also has the option to convert the currency of the estimated prices.
 
@@ -51,11 +51,13 @@
 > - Using a new css framework
 > - Keeping design responsive and consistent
 
-## Roadmap
+## 🚧 [Roadmap](https://github.com/jschrbr/food-hound/wiki/Roadmap)
 
-📆 [Roadmap](https://github.com/jschrbr/food-hound/wiki/Roadmap)
+## 🔧 [Contributing](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
 
-## Contributors
+Before making contributions have a look at the general strucure of the code, in our docs.
+
+## 🙌 Contributors
 
 ### James Schreiber
 
