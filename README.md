@@ -65,7 +65,7 @@
 
 <!-- <img alt="interface" src= assets/images/user-interface.PNG width= 100%/> -->
 
- <!-- <img alt="currency" src= assets/images/currency-converter-dropdowm.PNG width= 100% /> -->
+<!-- <img alt="currency" src= assets/images/currency-converter-dropdowm.PNG width= 100% /> -->
 
 <!-- <img alt="search" src= assets/images/search-recipe-functionality.PNG width= 100%/> -->
 
@@ -80,7 +80,11 @@
 
 #### Spoonacular API
 
+https://spoonacular.com/food-api
+
 #### Free currency converter API
+
+https://www.currencyconverterapi.com/docs
 
 ### CSS framework
 
@@ -97,6 +101,10 @@
 </pre>
 
 #### Materialize CSS
+
+> The page layout utilises the Materialize front end framework to create a responsive webpage. By using this framework we were able to fast-track creation of elements on the html and css design. The framework enables a full page and all of it's internal elements to respond to the size and format of the users screen when viewing the webpage.
+
+The head of the document calls on the Materialize stylesheet, Google material fonts and our own CSS stylesheet.
 
 > - https://materializecss.com/color.html
 > - https://materializecss.com/shadow.html
@@ -116,6 +124,7 @@
 > - Writing the code
 > - styling the site
 > - Collaborating and Git
+> - Variable skill levels
 
 ### Learning new concepts
 
