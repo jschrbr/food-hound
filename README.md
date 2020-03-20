@@ -80,10 +80,10 @@ Below there is the main body of the page that is broken down into three main ele
 
 ```html
 <form>
-    <div class="input-field red accent-4 white-text">
-        <input id="recipe-search-field"/>
-        <label recipe-search-field">Enter a dish</label>
-    </div>
+  <div class="input-field red accent-4 white-text">
+    <input id="recipe-search-field" />
+    <label recipe-search-field>Enter a dish</label>
+  </div>
 </form>
 ```
 
@@ -133,6 +133,10 @@ The element must be contained inside that input field.
 
 Under the section class, materialize cards were utilised to show returned recipes when user inputs a search query.
 
+This is what the search bar functionality looks like in action:
+<br/>
+<img alt="searchbar" src= assets/images/searchbar-burgers.PNG width= 50%/>
+
 ```html
 <div class="section">
   <div class="row" id="returned-recipes">
@@ -177,6 +181,10 @@ function cardBuilder() {
   $("#returned-recipes").append(recipeCard);
 }
 ```
+
+This is what the card looks like in action:
+<br/>
+<img alt="recipecards" src= assets/images/recipe-cards.PNG width= 25%/>
 
 ### The call
 
@@ -242,6 +250,10 @@ function ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice) {
   $(".ingredients-list").append(ingredientResult);
 }
 ```
+
+This is what the table looks like in action:
+<br/>
+<img alt="ingredientstable" src= assets/images/ingredients-list.PNG width= 50%/>
 
 ### The call
 
