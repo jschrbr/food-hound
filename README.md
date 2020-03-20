@@ -23,10 +23,6 @@
 >   - [Learning new concepts](#learning-new-concepts)
 > - [🚧 Roadmap](https://github.com/jschrbr/food-hound/wiki/Roadmap)
 > - [🙌 Contributors](#---contributors)
->   - [James Schreiber](#james-schreiber)
->   - [Haylie Goh](#haylie-goh)
->   - [Alan Harrison](#alan-harrison)
->   - [DC Cunningham](#dc-cunningham)
 > - [🤝 Contributing](#---contributing)
 >   - [🔧 Code abstract](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
 > - [Show your support](#show-your-support)
@@ -43,15 +39,24 @@
 
 > Basic usage:
 
+<div style="display:flex;justify-content:center;">
+
 <img alt="interface" src= "assets/images/Food Hound.gif" width= 60%/>
+</div>
 
 > Mobile view:
 
+<div style="display:flex;justify-content:center;">
+
 <img alt="interface" src= "assets/images/Food Hound mobile.gif" />
+</div>
 
 > Responsiveness:
 
+<div style="display:flex;justify-content:center;">
+
 <img alt="interface" src= "assets/images/Food Hound responsiveness.gif" width= 60%/>
+</div>
 
 > The below image demonstrates the application functionality: <img alt="interface" src= assets/images/user-interface.PNG width= 100%/>
 
