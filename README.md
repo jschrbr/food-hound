@@ -7,11 +7,37 @@
   </a>
 </h1>
 
+> # TOC
+>
+> - [Description](#description)
+> - [Usage](#usage)
+> - [Stack choices](#stack-choices)
+>   - [APIs](#api)
+>     - [Spoonacular API](#spoonacular-api)
+>     - [Free Currency Converter API](#free-currency-converter-api)
+>   - [CSS framework](#css-framework)
+>     - [Materialize CSS](#materialize-css)
+> - [Challenges](#challenges)
+>   - [API constraints](#api-constraints)
+>   - [Collaborative work](#collaborative-work)
+>   - [Learning new concepts](#learning-new-concepts)
+> - [🚧 Roadmap](https://github.com/jschrbr/food-hound/wiki/Roadmap)
+> - [🙌 Contributors](#---contributors)
+>   - [James Schreiber](#james-schreiber)
+>   - [Haylie Goh](#haylie-goh)
+>   - [Alan Harrison](#alan-harrison)
+>   - [DC Cunningham](#dc-cunningham)
+> - [🤝 Contributing](#---contributing)
+>   - [🔧 Code abstract](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
+> - [Show your support](#show-your-support)
+
+## 🏠 [Homepage](https://github.com/jschrbr/food-hound)
+
+## ✨ [Demo](https://jschrbr.github.io/food-hound/)
+
+## Description
+
 > A simple single page application for looking up recipes. The application also has the option to convert the currency of the estimated prices.
-
-### 🏠 [Homepage](https://github.com/jschrbr/food-hound)
-
-### ✨ [Demo](https://jschrbr.github.io/food-hound/)
 
 ## Usage
 
@@ -30,10 +56,9 @@
 > - Settled on spoonacular hoped for woolworths or equiv for product info.
 > - No store api, currency converter used to convert spoonacular prices.
 
-### Additional contraints
+#### Spoonacular API
 
-> - Free APIs are generaly limited
-> - Front end application meant using a subscription API would be expensive/complex/un-safe.
+#### Free currency converter API
 
 ### CSS framework
 
@@ -58,10 +83,20 @@
 
 ## Challenges
 
+### API contraints
+
+> - Free APIs are generaly limited
+> - Front end application meant using a subscription API would be expensive/complex/un-safe.
 > - Selecting the apis
+
+### Collaborative work
+
 > - Writing the code
 > - styling the site
 > - Collaborating and Git
+
+### Learning new concepts
+
 > - Using a new css framework
 > - Keeping design responsive and consistent
 
