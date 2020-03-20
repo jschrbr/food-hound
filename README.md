@@ -41,6 +41,18 @@
 
 ## Usage
 
+> Basic usage:
+
+<img alt="interface" src= "assets/images/Food Hound.gif" width= 60%/>
+
+> Mobile view:
+
+<img alt="interface" src= "assets/images/Food Hound mobile.gif" />
+
+> Responsiveness:
+
+<img alt="interface" src= "assets/images/Food Hound responsiveness.gif" width= 60%/>
+
 > The below image demonstrates the application functionality: <img alt="interface" src= assets/images/user-interface.PNG width= 100%/>
 
 > User can also choose a currency of their choice <img alt="currency" src= assets/images/currency-converter-dropdowm.PNG width= 100% />
