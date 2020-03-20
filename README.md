@@ -39,7 +39,7 @@
 
 > Basic usage:
 
-<div style="display:flex;justify-content:center;">
+<div style="display:flex;justify-content:center; align-items: center;">
 
 <img alt="interface" src= "assets/images/Food Hound.gif" width= 60%/>
 </div>
