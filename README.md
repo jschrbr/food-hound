@@ -97,10 +97,10 @@
 ## 🤝 Contributing
 
 > ### 🔧 [Code abstract](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
+>
+> Before making contributions have a look at the general strucure of the code, in our docs.
 
-Before making contributions have a look at the general strucure of the code, in our docs.
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jschrbr/food-hound/issues).
+> Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jschrbr/food-hound/issues).
 
 ## Show your support
 
