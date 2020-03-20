@@ -37,20 +37,22 @@
 
 ### CSS framework
 
-```sh
+<pre>
 .
 └── html
     ├── head
     └── body
         └── main
-        |   ├── recipe search card
-        |   ├── recipe result cards
-        |   └── ingredients table
+        |   ├── <a href="https://materializecss.com/cards.html">recipe search card</a>
+        |   ├── <a href="https://materializecss.com/cards.html">recipe result cards</a>
+        |   └── <a href="https://materializecss.com/table.html">ingredients table</a>
         └── footer
-```
+</pre>
 
 #### Materialize CSS
 
+> - https://materializecss.com/color.html
+> - https://materializecss.com/shadow.html
 > - Responsive elements
 > - Material design
 
@@ -81,11 +83,10 @@
 - Github: [@dev-hg20](https://github.com/dev-hg20)
 - LinkedIn: (https://www.linkedin.com/in/haylie-goh-941bb896/)
 
-### Name
+### Alan Harrison
 
-- Website: https://{placeholder}.github.io/
-- Github: [@{placholder}](https://github.com/{placholder})
-- LinkedIn: [@{placholder}](https://linkedin.com/in/{placholder})
+- Website: https://red-dog77.github.io/
+- Github: [@red-dog77](https://github.com/red-dog77)
 
 ### DC Cunningham
 
@@ -95,7 +96,7 @@
 
 ## 🤝 Contributing
 
-> ### 🔧 [Code](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
+> ### 🔧 [Code abstract](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
 
 Before making contributions have a look at the general strucure of the code, in our docs.
 
