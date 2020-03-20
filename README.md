@@ -53,9 +53,7 @@
 
 ## 🚧 [Roadmap](https://github.com/jschrbr/food-hound/wiki/Roadmap)
 
-## 🔧 [Contributing](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
-
-Before making contributions have a look at the general strucure of the code, in our docs.
+Checkout whats in store.
 
 ## 🙌 Contributors
 
@@ -84,6 +82,10 @@ Before making contributions have a look at the general strucure of the code, in 
 - LinkedIn: [@DC-Cunningham](https://www.linkedin.com/in/DC-Cunningham)
 
 ## 🤝 Contributing
+
+### 🔧 [Code](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
+
+Before making contributions have a look at the general strucure of the code, in our docs.
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jschrbr/food-hound/issues).
 
