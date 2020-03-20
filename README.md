@@ -81,7 +81,7 @@
 
 - Website: https://dev-hg20.github.io/profile-hw/
 - Github: [@dev-hg20](https://github.com/dev-hg20)
-- LinkedIn: (https://www.linkedin.com/in/haylie-goh-941bb896/)
+- LinkedIn: [Haylie Goh](https://www.linkedin.com/in/haylie-goh-941bb896/)
 
 ### Alan Harrison
 
