@@ -26,7 +26,7 @@ $(document).ready(function() {
     var queryURL =
       "https://api.spoonacular.com/recipes/search?query=" +
       userInput +
-      "&number=4&apiKey=7fd63fa14b66441e9190b97a36f40c22";
+      "&number=4&apiKey=16671079d1024224b5e20ca65604816c";
 
     $.ajax({
       url: queryURL,
@@ -54,7 +54,7 @@ $(document).ready(function() {
     var queryURL =
       "https://api.spoonacular.com/recipes/" +
       id +
-      "/priceBreakdownWidget.json?apiKey=92529c25799b421d90b3ef2443e71505";
+      "/priceBreakdownWidget.json?apiKey=16671079d1024224b5e20ca65604816c";
 
     $.ajax({
       url: queryURL,

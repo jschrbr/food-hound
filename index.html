@@ -1,133 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Food Hound</title>
 
-<head>
-  <meta
-    http-equiv="Content-Type"
-    content="text/html; charset=UTF-8"
-  />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  />
-  <title>Food Hound</title>
+    <!-- CSS  -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/css/materialize.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="assets/css/styles.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+  </head>
 
-  <!-- CSS  -->
-  <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-  />
-  <link
-    href="assets/css/materialize.css"
-    type="text/css"
-    rel="stylesheet"
-    media="screen,projection"
-  />
-  <link
-    href="assets/css/styles.css"
-    type="text/css"
-    rel="stylesheet"
-    media="screen,projection"
-  />
-</head>
-
-<body>
-  <nav
-    class="nav-extended red accent-4"
-    role="navigation"
-  >
-    <div class="nav-wrapper row">
-      <div class="col xs6 s4 m2 l1 right">
-        <div class="input-field red accent-4 amber-text">
-          <select data-exch-rate="">
-            <option
-              value="0"
-              disabled
-              selected
-            > $</option>
-            <option
-              class="amber-text"
-              value="AUD"
-            >AUD</option>
-            <option value="USD">USD</option>
-            <option value="GBP">GPB</option>
-          </select>
+  <body>
+    <nav class="nav-extended red accent-4" role="navigation">
+      <div class="nav-wrapper row">
+        <div class="col xs6 s4 m2 l1 right">
+          <div class="input-field red accent-4 amber-text">
+            <select data-exch-rate="">
+              <option value="0" disabled selected> $</option>
+              <option class="amber-text" value="AUD">AUD</option>
+              <option value="USD">USD</option>
+              <option value="GBP">GPB</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            id="logo-container"
+            src="assets/images/food-hound-logo.png"
+            class="left"
+          />
+          <a
+            id="logo-container"
+            src="../assets/images/food-hound-logo.png"
+            class="brand-logo left"
+            >Food Hound</a
+          >
         </div>
       </div>
-      <div class="col">
-        <img
-          id="logo-container"
-          src="assets/images/food-hound-logo.png"
-          class="left"
-        />
-        <a
-          id="logo-container"
-          src="../assets/images/food-hound-logo.png"
-          class="brand-logo left"
-        >Food Hound</a>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <main class="container">
-    <div class="search container">
-      <div class="card center amber-text z-depth-4">
-        <span class="card-title ">Search for a recipe</span>
-        <div class="card-content">
-          <form>
-            <div class="input-field red accent-4 white-text">
-              <input
-                id="recipe-search-field"
-                type="text"
-                class="white-text"
-              />
-              <label for="recipe-search-field">Enter a dish</label>
-            </div>
-          </form>
+    <main class="container">
+      <div class="search container">
+        <div class="card center amber-text z-depth-4">
+          <span class="card-title ">Search for a recipe</span>
+          <div class="card-content">
+            <form>
+              <div class="input-field red accent-4 white-text">
+                <input
+                  id="recipe-search-field"
+                  type="text"
+                  class="white-text"
+                />
+                <label for="recipe-search-field">Enter a dish</label>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="recipes">
-      <div
-        class="row"
-        id="returned-recipes"
-      ></div>
-    </div>
-    <table class="ingredients-table z-depth-4">
-      <thead>
-        <tr>
-          <th>
-            Ingredients
-          </th>
-          <th>
-            Quantity
-          </th>
-          <th>
-            Price
-          </th>
-        </tr>
-      </thead>
-      <tbody class="ingredients-list"></tbody>
-    </table>
-  </main>
+      <div class="recipes">
+        <div class="row" id="returned-recipes"></div>
+      </div>
+      <table class="ingredients-table z-depth-4">
+        <thead>
+          <tr>
+            <th>
+              Ingredients
+            </th>
+            <th>
+              Quantity
+            </th>
+            <th>
+              Price
+            </th>
+          </tr>
+        </thead>
+        <tbody class="ingredients-list"></tbody>
+      </table>
+    </main>
 
-  <footer class="page-footer red accent-4">
-    <div class="container">
-      <div class="row">
-        <p>
-          Check out our project on
-        </p>
-        <a href="https://github.com/jschrbr/food-hound"><img
-            id="github"
-            src="assets/images/GitHub_Logo_White_250x103.png"
-            target="blank"
+    <footer class="page-footer red accent-4">
+      <div class="container">
+        <div class="row">
+          <p>
+            Check out our project on
+          </p>
+          <a href="https://github.com/jschrbr/food-hound"
+            ><img
+              id="github"
+              src="assets/images/GitHub_Logo_White_250x103.png"
+              target="blank"
           /></a>
+        </div>
       </div>
-    </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="assets/js/materialize.js"></script>
-  <script src="assets/js/script.js"></script>
-</body>
-
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="assets/js/materialize.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

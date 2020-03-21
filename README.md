@@ -33,15 +33,8 @@
 
 ## Description
 
-> A simple single page application for looking up recipes. The application also has the option to convert the currency of the estimated prices.
-
-> The below image demonstrates the application functionality:
-
-> User can also choose a currency of their choice
-
-> User will enter a recipe of their choice, in this case "burgers"
-
-> Once the user presses ENTER, it will call the API and render the ingredients list.
+Our idea stemmed from the team’s love for food! We named it Food Hound and it’s basically an application where you can use list an item that you have on hand and it will generate recipe options for you. So you won’t need to stare at your pantry or fridge to figure out what you’re making for lunch or dinner that day!! Basically making lives easier for all
+So you don’t know what you want after class as an afternoon treat? Don’t worry, Food hound is your solution. It’s an easy to use application for all ages and it is free of charge!
 
 ## Usage
 
@@ -127,21 +120,17 @@ GET https://free.currconv.com/api/v7/convert?q=USD_PHP&apiKey=[YOUR_API_KEY]
 
 ### API contraints
 
-> - Free APIs are generaly limited
-> - Front end application meant using a subscription API would be expensive/complex/un-safe.
-> - Selecting the apis
+The API we utilised were both free of charge and is limited. Spoonacular has a limit of 150 call per day and the currency converter has a 200 call per month. We chose the free API as this project is a front end application and using subscription based APIs would be unsafe and expensive. We also had a few challenges regarding selecting which APIs to use, we wanted to use Zomato in the beginning but had to use Spoonacular as then we had issues signing up to the Zomato one. We also wanted to utilise Coles/Woolworth API to get the availability, price of an ingredient but we couldn’t get access to it so we opted in for a currency converter.
 
 ### Collaborative work
 
-> - Writing the code
-> - styling the site
-> - Collaborating and Git
-> - Variable skill levels
+In terms of writing the code, we split our group of 4 into different functions of the applications and split it as 2 on the front-end and 2 on the back-end. The primary focus was getting the AJAX calls to work across both APIs and the HTML/Jquery functions.
+
+Across GIT we made branches, multiple commits, worked on some conflicts. It was good practical experience to pull, push and commit changes. I found the screen share option useful especially when someone’s stuck on git. We also had various skill levels in the team so that made it easier to work together and discuss the code so we didn’t need to share screenshots of our code. We all improved on our detail of commits and general workflow with GIT compared to day 1.
 
 ### Learning new concepts
 
-> - Using a new css framework
-> - Keeping design responsive and consistent
+We also used Materialize, because it was automatically responsive. It’s also a standardised style which meets the requirement of our project.
 
 ## 🚧 [Roadmap](https://github.com/jschrbr/food-hound/wiki/Roadmap)
 
