@@ -57,12 +57,6 @@
 <img alt="interface" src= "assets/images/Food Hound mobile.gif" />
 </div>
 
-> Responsiveness:
-
-<div align="center">
-<img alt="interface" src= "assets/images/Food Hound responsiveness.gif" width= 60%/>
-</div>
-
 <!-- <img alt="interface" src= assets/images/user-interface.PNG width= 100%/> -->
 
 <!-- <img alt="currency" src= assets/images/currency-converter-dropdowm.PNG width= 100% /> -->
@@ -75,16 +69,31 @@
 
 ### Third party APIs
 
-> - Settled on spoonacular hoped for woolworths or equiv for product info.
-> - No store api, currency converter used to convert spoonacular prices.
+> The initial aim of the project was to select two 3rd party APIs, and use data from one reponse to query the second API. To keep momentum in the project the group settled on using the [Spoonacular API](https://spoonacular.com/food-api) and promised to find another API to meet the oiginal aim.
+
+> We hoped to tie the spoonacular data to the woolworths API, but were unaware of how realistic that would be. With the initial aim seeming unlikely given what free APIs have to offer, [the free currency converter API](https://www.currencyconverterapi.com/docs) was selected to meet the project requirements. In leiu of integrating to APIs together, there are two variants of queries used with the Spoonacular API.
 
 #### Spoonacular API
 
-https://spoonacular.com/food-api
+Search for recipe
+
+```
+GET https://api.spoonacular.com/recipes/search?query={SEARCH QUERY}
+```
+
+Get ingredients with price
+
+```
+GET https://api.spoonacular.com/recipes/{id}/priceBreakdownWidget.json
+```
 
 #### Free currency converter API
 
-https://www.currencyconverterapi.com/docs
+Get exchange rate
+
+```
+GET https://free.currconv.com/api/v7/convert?q=USD_PHP&apiKey=[YOUR_API_KEY]
+```
 
 ### CSS framework
 
@@ -102,14 +111,15 @@ https://www.currencyconverterapi.com/docs
 
 #### Materialize CSS
 
-> The page layout utilises the Materialize front end framework to create a responsive webpage. By using this framework we were able to fast-track creation of elements on the html and css design. The framework enables a full page and all of it's internal elements to respond to the size and format of the users screen when viewing the webpage.
+> The page layout utilises the Materialize front end framework to create a responsive webpage. The library was also used to [theme](https://materializecss.com/color.html) the website.
 
-The head of the document calls on the Materialize stylesheet, Google material fonts and our own CSS stylesheet.
+> Material design was used to followtypical style choices. Material design is a digital paper format used to guide users through a site. One important aspect of material design is the use of [shadows](https://materializecss.com/shadow.html). Food-hound uses shadows to highlight the search card and ingrdients table on the website.
 
-> - https://materializecss.com/color.html
-> - https://materializecss.com/shadow.html
-> - Responsive elements
-> - Material design
+> The framework enables full page repsonsiveness for mobile, tablet and desktop views.
+
+<div align="center">
+<img alt="interface" src= "assets/images/Food Hound responsiveness.gif" width= 60%/>
+</div>
 
 ## Challenges
 
