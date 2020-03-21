@@ -75,16 +75,37 @@
 
 ### Third party APIs
 
-> - Settled on spoonacular hoped for woolworths or equiv for product info.
-> - No store api, currency converter used to convert spoonacular prices.
+> The initial aim of the project was to select two 3rd party APIs, and use data from one reponse to query the second API.
+
+> To keep momentum in the project the group settled on using the [Spoonacular API](https://spoonacular.com/food-api) and promised to find another API to meet the oiginal aim.
+
+> We hoped to tie the spoonacular data to the woolworths API, but were unaware of how realistic that would be.
+
+> With the initial aim seeming unlikely given what free APIs have to offer, [the free currency converter API](https://www.currencyconverterapi.com/docs) was selected to meet the project requirements.
+
+> In leiu of integrating to APIs together, there are two variants of queries used with the Spoonacular API.
 
 #### Spoonacular API
 
-https://spoonacular.com/food-api
+Search for recipe
+
+```
+GET https://api.spoonacular.com/recipes/search?query={SEARCH QUERY}
+```
+
+Get ingredients with price
+
+```
+GET https://api.spoonacular.com/recipes/{id}/priceBreakdownWidget.json
+```
 
 #### Free currency converter API
 
-https://www.currencyconverterapi.com/docs
+Get exchange rate
+
+```
+GET https://free.currconv.com/api/v7/convert?q=USD_PHP&apiKey=[YOUR_API_KEY]
+```
 
 ### CSS framework
 
