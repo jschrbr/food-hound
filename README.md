@@ -1,391 +1,141 @@
 <h1 align="center">Welcome to food-hound <img width="40px" src="./assets/images/material-hound.png">
 </h1>
-<p>
+<h1>
   <img alt="Version" src="https://img.shields.io/badge/version-01.00-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/jschrbr/food-hound" target="_blank">
+  <a href="https://github.com/jschrbr/food-hound/wiki" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-</p>
+</h1>
+
+> # TOC
+>
+> - [Description](#description)
+> - [Usage](#usage)
+> - [Stack choices](#stack-choices)
+>   - [Third party APIs](#third-party-apis)
+>     - [Spoonacular API](#spoonacular-api)
+>     - [Free Currency Converter API](#free-currency-converter-api)
+>   - [CSS framework](#css-framework)
+>     - [Materialize CSS](#materialize-css)
+> - [Challenges](#challenges)
+>   - [API constraints](#api-constraints)
+>   - [Collaborative work](#collaborative-work)
+>   - [Learning new concepts](#learning-new-concepts)
+> - [🚧 Roadmap](https://github.com/jschrbr/food-hound/wiki/Roadmap)
+> - [🙌 Contributors](#---contributors)
+> - [🤝 Contributing](#---contributing)
+>   - [🔧 Code abstract](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
+> - [Show your support](#show-your-support)
+
+## 🏠 [Homepage](https://github.com/jschrbr/food-hound)
+
+## ✨ [Demo](https://jschrbr.github.io/food-hound/)
+
+## Description
 
 > A simple single page application for looking up recipes. The application also has the option to convert the currency of the estimated prices.
 
-### 🏠 [Homepage](https://github.com/jschrbr/food-hound)
+> The below image demonstrates the application functionality:
 
-### ✨ [Demo](https://jschrbr.github.io/food-hound/)
+> User can also choose a currency of their choice
+
+> User will enter a recipe of their choice, in this case "burgers"
+
+> Once the user presses ENTER, it will call the API and render the ingredients list.
 
 ## Usage
 
-The below image demonstrates the application functionality:
+> Basic usage:
 
-<img alt="interface" src= assets/images/user-interface.PNG width= 100%/>
-
-User can also choose a currency of their choice
-
-<img alt="currency" src= assets/images/currency-converter-dropdowm.PNG width= 100% />
-
-User will enter a recipe of their choice, in this case "burgers"
-
-<img alt="search" src= assets/images/search-recipe-functionality.PNG width= 100%/>
-
-Once the user presses ENTER, it will call the API and render the ingredients list.
-
-<img alt="button" src= assets/images/button-for-ingredients.PNG width= 100%/>
-
-## Page layout
-
-The page layout utilises the [Materialize](https://materializecss.com/) front end framework to create a responsive webpage. By using this framework we were able to fast-track creation of elements on the html and css design. The framework enables a full page and all of it's internal elements to respond to the size and format of the users screen when viewing the webpage.
-
-The head of the document calls on the [Materialize](https://materializecss.com/) stylesheet, [Google material fonts](https://material.io/resources/icons/?style=baseline) and our own CSS stylesheet.
-
-```html
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<link href="assets/css/materialize.css" />
-<link href="assets/css/styles.css" />
-```
-
-Individual changes in styling are controlled by the CSS stylesheet where required. For example the placement and color of the Page title;
-
-```css
-nav ul a,
-nav .brand-logo {
-  color: #ffffff;
-  position: inherit;
-}
-```
-
-The header of the page includes the site name and also a drop down box for the users currency preference controlled by Materialize classes utilised sitewide.
-
-```css
-.red .accent-4 .amber-text
-```
-
-```html
-<nav class="nav-extended red accent-4">
-  <div class="nav-wrapper row">
-    <div class="col s5 right">
-      <div class="input-field red accent-4 amber-text">
-        <!-- code for the currency dropdown goes here -->
-      </div>
-    </div>
-    <div class="col">
-      <!-- code for the logo and title goes here -->
-    </div>
-  </div>
-</nav>
-```
-
-Below there is the main body of the page that is broken down into three main elements. Each incorporates id's which are used to link to javascript functionality. These are;
-
-- the search field within a form tag. The search field is where a user can input the recipe that they are wishing to find and is a simple text input field
-
-```html
-<form>
-  <div class="input-field red accent-4 white-text">
-    <input id="recipe-search-field" />
-    <label recipe-search-field>Enter a dish</label>
-  </div>
-</form>
-```
-
-- the returned recipe cards area,
-
-```html
-<div class="section">
-  <div class="row" id="returned-recipes"></div>
+<div align="center">
+<img alt="interface" src= "assets/images/Food Hound.gif" width= 60%/>
 </div>
-```
 
-- and the ingredients table.
+> Mobile view:
 
-```html
-<table class="table">
-  <thead>
-    <tr>
-      <th>
-        Ingredients
-      </th>
-      <th>
-        Quantity
-      </th>
-      <th>
-        Price
-      </th>
-    </tr>
-  </thead>
-  <tbody id="ingredients-list"></tbody>
-</table>
-```
-
-The footer includes a link to this Github repository and copyright information.
-
-## Get Recipe
-
-### Lookup component
-
-The code below defines the search bar from the materialize css library.
-The element must be contained inside that input field.
-
-```html
-<div class="input-field red accent-4 white-text">
-  <input id="recipe-search-field" type="text" class="white-text" />
+<div align="center">
+<img alt="interface" src= "assets/images/Food Hound mobile.gif" />
 </div>
-```
 
-Under the section class, materialize cards were utilised to show returned recipes when user inputs a search query.
+> Responsiveness:
 
-This is what the search bar functionality looks like in action:
-<br/>
-<img alt="searchbar" src= assets/images/searchbar-burgers.PNG width= 50%/>
-
-```html
-<div class="section">
-  <div class="row" id="returned-recipes">
-    <!-- code goes here -->
-  </div>
+<div align="center">
+<img alt="interface" src= "assets/images/Food Hound responsiveness.gif" width= 60%/>
 </div>
-```
 
-The structure of the card builder includes an image, a floating button and a card title. In order for the recipe to render it's ingredients list a value was attribute to the button.
+<!-- <img alt="interface" src= assets/images/user-interface.PNG width= 100%/> -->
 
-```js
-function cardBuilder() {
-  let recipeCard = $("<div>");
-  recipeCard.attr("class", "col s6 m3");
-  let cardContainer = $("<div>");
-  cardContainer.attr("class", "card");
-  let cardImageContainer = $("<div>");
-  cardImageContainer.attr("class", "card-image recipe-image");
-  let cardImage = $("<img>");
-  cardImage.attr("src", recipeImage);
-  let cardButton = $("<a>");
-  cardButton.attr(
-    "class",
-    "btn-floating halfway-fab waves-effect waves-light red"
-  );
-  cardButton.attr("id", recipeId);
-  let cardIcon = $("<i>");
-  cardIcon.attr("class", "material-icons");
-  cardIcon.text("format_list_bulleted");
-  let cardTitleContainer = $("<div>");
-  cardTitleContainer.attr("class", "card-content flow-text");
-  let cardTitle = $("<span>");
-  cardTitle.attr("class", "card-title");
-  cardTitle.text(recipeTitle);
-  recipeCard.append(cardContainer);
-  cardContainer.append(cardImageContainer);
-  cardImageContainer.append(cardImage);
-  cardImageContainer.append(cardButton);
-  cardButton.append(cardIcon);
-  cardContainer.append(cardTitleContainer);
-  cardTitleContainer.append(cardTitle);
-  $("#returned-recipes").append(recipeCard);
-}
-```
+<!-- <img alt="currency" src= assets/images/currency-converter-dropdowm.PNG width= 100% /> -->
 
-This is what the card looks like in action:
-<br/>
-<img alt="recipecards" src= assets/images/recipe-cards.PNG width= 25%/>
+<!-- <img alt="search" src= assets/images/search-recipe-functionality.PNG width= 100%/> -->
 
-### The call
+<!-- <img alt="button" src= assets/images/button-for-ingredients.PNG width= 100%/> -->
 
-The url query string is built get the ID, title and image, it is used in the below code.
+## Stack choices
 
-```js
-var queryURL = "recipeURL";
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      var results = response.results;
-      $("#returned-recipes").empty();
+### Third party APIs
 
-      for (index in results) {
-        recipeId = results[index].id;
-        recipeTitle = results[index].title;
-        recipeImage =
-          "https://spoonacular.com/recipeImages/" + results[index].imageUrls;
-      }
-```
+> - Settled on spoonacular hoped for woolworths or equiv for product info.
+> - No store api, currency converter used to convert spoonacular prices.
 
-### The listener
+#### Spoonacular API
 
-We also set up a listener to monitor the change when user hits ENTER.
+https://spoonacular.com/food-api
 
-```js
-$("form").submit(function(event) {
-  event.preventDefault();
-  var userInput = $("#recipe-search-field")
-    .val()
-    .trim();
-  // return userInput
-  buildQuery(userInput);
-});
-```
+#### Free currency converter API
 
-## Ingredient lookup
+https://www.currencyconverterapi.com/docs
 
-### Getting ingredients from API call
+### CSS framework
 
-The code below defines the search url using the recipe ID that is stored in the recipe card button value.
+<pre>
+.
+└── html
+    ├── head
+    └── body
+        └── main
+        |   ├── <a href="https://materializecss.com/cards.html">recipe search card</a>
+        |   ├── <a href="https://materializecss.com/cards.html">recipe result cards</a>
+        |   └── <a href="https://materializecss.com/table.html">ingredients table</a>
+        └── footer
+</pre>
 
-```js
-function getIngredients(id) {
-    var queryURL =
-      "https://api.spoonacular.com/recipes/" +
-      id +
-      "/priceBreakdownWidget.json?apiKey=92529c25799b421d90b3ef2443e71505";
-```
+#### Materialize CSS
 
-The structure of the ingredients is a row within a table and is built within the ingredientsBuilder function and appended to the html.
+> The page layout utilises the Materialize front end framework to create a responsive webpage. By using this framework we were able to fast-track creation of elements on the html and css design. The framework enables a full page and all of it's internal elements to respond to the size and format of the users screen when viewing the webpage.
 
-```js
-function ingredientsBuilder(ingredient, ingredientQuantity, ingredientPrice) {
-  let ingredientResult = $("<tr>");
-  let ingredientList = $("<td>").text(ingredient);
-  ingredientResult.append(ingredientList);
-  let ingredientQuantityList = $("<td>").text(ingredientQuantity);
-  ingredientResult.append(ingredientQuantityList);
-  let ingredientPriceList = $("<td>").text(ingredientPrice);
-  ingredientResult.append(ingredientPriceList);
-  $(".ingredients-list").append(ingredientResult);
-}
-```
+The head of the document calls on the Materialize stylesheet, Google material fonts and our own CSS stylesheet.
 
-This is what the table looks like in action:
-<br/>
-<img alt="ingredientstable" src= assets/images/ingredients-list.PNG width= 50%/>
+> - https://materializecss.com/color.html
+> - https://materializecss.com/shadow.html
+> - Responsive elements
+> - Material design
 
-### The call
+## Challenges
 
-The url query that was built with the recipe ID is used to make the AJAX call
+### API contraints
 
-```js
-$.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      var results = response.ingredients;
-```
+> - Free APIs are generaly limited
+> - Front end application meant using a subscription API would be expensive/complex/un-safe.
+> - Selecting the apis
 
-### The listener
+### Collaborative work
 
-The listener for the ingredients call is built within the buildQuery function so that once a recipe card is created the button on it is being listened to.
+> - Writing the code
+> - styling the site
+> - Collaborating and Git
+> - Variable skill levels
 
-```js
-function buildQuery(userInput) {
-  --< >--
-$(".btn-floating").on("click", function() {
-        getIngredients(this.id);
-        $(".ingredients-list").empty();
-```
+### Learning new concepts
 
-The response needs to be rendered to the page using the JQuery link to the html ID "ingredients-list"
+> - Using a new css framework
+> - Keeping design responsive and consistent
 
-```html
-<table>
-  <tbody class="ingredients-list"></tbody>
-</table>
-```
+## 🚧 [Roadmap](https://github.com/jschrbr/food-hound/wiki/Roadmap)
 
-## Get exchange rate
+> Check out what we have in store.
 
-### Dropdown component
-
-The below code defines the dropdown component from the materialize css library.
-
-The element must be contained inside an input field.
-
-```html
-<div class="input-field red accent-4 amber-text">
-  ...
-  <!-- code goes here -->
-  ...
-</div>
-```
-
-The input uses materialize classes to match the site theme.
-
-```html
-.red .accent-4 .amber-text
-```
-
-select tag is declared with nest options, each option holds a value used when querying https://free.currencyconverterapi.com/.
-
-```html
-<select data-exch-rate="">
-  <option value="0" disabled selected> $</option>
-  <option class="amber-text" value="AUD">AUD</option>
-  <option value="USD">USD</option>
-  <option value="GBP">GPB</option>
-</select>
-```
-
-### The structure
-
-First we define some constants used throughout the code.
-
-```js
-const currencySelect = $("select");
-const selectSel = currencySelect.formSelect()[0];
-```
-
-Then we define the function then call it immediately.
-
-```js
-function getExchRate() {
-  let currency = localStorage.getItem("currency");
-  if (currency) {
-    selectSel.value = currency;
-  } else {
-    currency = "AUD";
-  }
-  currencySelect.formSelect();
-  url = "currency url";
-
-  // Make API call
-}
-
-getExchRate();
-```
-
-The code intially ensures there is a currency value for the api call. It does so by checking the `localStorage` for a previously selected option, otherwise assigning a default value `"AUD"`.
-
-The below jquery function renders the dropdown element, incase a value was retrieved from local storage
-
-```js
-currencySelect.formSelect();
-```
-
-### The call
-
-The url query string is built with the validated currency, and used in the below code.
-
-```js
-$.ajax({
-  url: url,
-  method: "GET"
-}).then(function(resp) {
-  let rate = Object.values(resp)[0];
-  selectSel["data-exch-rate"] = rate;
-});
-```
-
-The exchange rate is then set to an attribute named `"data-exch-rate"`
-
-### The listener
-
-Finally we setup a listener, to monitor for a change in the dropdown selection.
-
-```js
-currencySelect.on("change", function(e) {
-  localStorage.setItem("currency", e.target.value);
-  getExchRate();
-});
-```
-
-The selection is saved to local storage, and the `getExchRate()` function is called. Where the selection is retrieved from local stroage.
-
-## Contributors
+## 🙌 Contributors
 
 ### James Schreiber
 
@@ -396,14 +146,13 @@ The selection is saved to local storage, and the `getExchRate()` function is cal
 ### Haylie Goh
 
 - Website: https://dev-hg20.github.io/profile-hw/
-- Github: [@{dev-hg20}](https://github.com/dev-hg20)
-- LinkedIn: (https://www.linkedin.com/in/haylie-goh-941bb896/)
+- Github: [@dev-hg20](https://github.com/dev-hg20)
+- LinkedIn: [Haylie Goh](https://www.linkedin.com/in/haylie-goh-941bb896/)
 
-### Name
+### Alan Harrison
 
-- Website: https://{placeholder}.github.io/
-- Github: [@{placholder}](https://github.com/{placholder})
-- LinkedIn: [@{placholder}](https://linkedin.com/in/{placholder})
+- Website: https://red-dog77.github.io/
+- Github: [@red-dog77](https://github.com/red-dog77)
 
 ### DC Cunningham
 
@@ -413,7 +162,11 @@ The selection is saved to local storage, and the `getExchRate()` function is cal
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jschrbr/food-hound/issues).
+> ### 🔧 [Code abstract](https://github.com/jschrbr/food-hound/wiki/Code-Structure)
+>
+> Before making contributions have a look at the general strucure of the code, in our docs.
+
+> Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jschrbr/food-hound/issues).
 
 ## Show your support
 

@@ -1,18 +1,20 @@
 body {
   background-color: #ff5131;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 #logo-container {
   height: 40px;
 }
-.input-field {
-  background-color: white;
+
+nav .brand-logo {
+  position: inherit;
 }
 
-nav ul a,
-nav .brand-logo {
-  color: #ffffff;
-  position: inherit;
+main {
+  flex: 1 0 auto;
 }
 
 #github {
@@ -36,8 +38,8 @@ nav .brand-logo {
   height: 150px;
 }
 
-p {
-  line-height: 2rem;
+.nav-wrapper {
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -49,22 +51,6 @@ p {
   }
 }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
-.table {
-  background-color: yellow;
-  color: black;
-  margin-bottom: 10px;
-}
-
-.nav-wrapper {
-  margin-top: 20px;
+table {
+  margin-bottom: 30px;
 }
