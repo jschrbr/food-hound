@@ -158,7 +158,7 @@ We also used Materialize, because it was automatically responsive. It’s also a
 ### DC Cunningham
 
 - Website: https://DCRevResLabs.github.io/
-- Github: [@DCRevResLabs](https://github.com/DCRevResLabs)
+- Github: [@DC-Cunningham](https://github.com/DC-Cunningham)
 - LinkedIn: [@DC-Cunningham](https://www.linkedin.com/in/DC-Cunningham)
 
 ## 🤝 Contributing
